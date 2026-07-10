@@ -1,0 +1,206 @@
+{
+  "schemaVersion": 1,
+  "createdAt": "2026-07-10T16:45:00+03:00",
+  "generator": { "cli": "higgsfield 0.1.28", "imageModel": "gpt_image_2", "videoModel": "seedance1_5" },
+  "defaults": { "status": "selected", "negativePrompt": null, "notes": "Text, logos and brand marks were excluded inside the positive prompt; raw outputs are immutable." },
+  "generations": [
+    {
+      "scene": 1,
+      "kind": "image",
+      "purpose": "Macro opening: kraft-paper layers",
+      "model": "gpt_image_2",
+      "generationId": "24de0833-c8c8-403b-86da-88e86b40c7e9",
+      "prompt": "Ultra-detailed cinematic macro frame of layered kraft paper sheets for high-pressure laminate manufacturing, precise stacked edges, subtle cured resin sheen between fibers, graphite industrial background, controlled warm side light, premium documentary industrial photography, realistic scale, 100mm macro lens, shallow but readable depth of field, geometrically stable material, text-free, unbranded, uninhabited, 16:9 website hero frame",
+      "parameters": { "aspectRatio": "16:9", "resolution": "2k", "quality": "high", "output": "2688x1520" },
+      "rawFile": "/media/lemark/raw/images/scene-01-raw-layers.png",
+      "selectedFile": "/media/lemark/selected/images/scene-01-raw-layers.png"
+    },
+    {
+      "scene": 2,
+      "kind": "image",
+      "purpose": "Decor paper and surface relief",
+      "model": "gpt_image_2",
+      "generationId": "97a8b586-e02d-42e1-824c-113daf7350da",
+      "prompt": "Cinematic macro of a finished HPL laminate surface beside its raw decorative paper layer, tactile warm wood-inspired texture, controlled raking light revealing micro-relief, graphite and warm neutral palette, photorealistic industrial material photography, perfectly flat stable plane, realistic laminate thickness, generous dark negative space, text-free, unbranded, 16:9",
+      "parameters": { "aspectRatio": "16:9", "resolution": "2k", "quality": "high", "output": "2688x1520" },
+      "rawFile": "/media/lemark/raw/images/scene-02-decor.png",
+      "selectedFile": "/media/lemark/selected/images/scene-02-decor.png"
+    },
+    {
+      "scene": 3,
+      "kind": "image",
+      "purpose": "Industrial HPL press",
+      "model": "gpt_image_2",
+      "generationId": "36f0c70c-d22a-48d3-981a-cb5c52676eb5",
+      "prompt": "Transform this real HPL factory reference into a premium documentary cinema frame while preserving believable machinery scale and main geometry. Show a large industrial hot press with laminate packs entering in a clean working environment, steel and graphite palette, warm practical lights, distant PPE-clad operators only for scale, physically accurate, restrained, text-free, unbranded, 16:9",
+      "parameters": { "aspectRatio": "16:9", "resolution": "2k", "quality": "high", "output": "2688x1520", "referenceImage": "/media/lemark/raw/images/references/factory-04.webp" },
+      "rawFile": "/media/lemark/raw/images/scene-03-press.png",
+      "selectedFile": "/media/lemark/selected/images/scene-03-press.png"
+    },
+    {
+      "scene": 4,
+      "kind": "image",
+      "purpose": "Finished compact HPL product",
+      "model": "gpt_image_2",
+      "generationId": "2b82cf3c-cace-40b8-a9cf-7131cb70bcff",
+      "prompt": "Hero product frame of a finished HPL compact laminate sheet standing vertically in a dark architectural studio, perfectly straight panel, visible dense black core edge, refined neutral mineral decorative face, raking light showing subtle embossing, restrained premium industrial campaign, graphite background, soft grounded reflection, realistic proportions, text-free, unbranded, 16:9",
+      "parameters": { "aspectRatio": "16:9", "resolution": "2k", "quality": "high", "output": "2688x1520" },
+      "rawFile": "/media/lemark/raw/images/scene-04-product.png",
+      "selectedFile": "/media/lemark/selected/images/scene-04-product.png"
+    },
+    {
+      "scene": 5,
+      "kind": "image",
+      "purpose": "Furniture and public interior application",
+      "model": "gpt_image_2",
+      "generationId": "a3fc0828-13ab-476c-bbc3-14095e36f0c5",
+      "prompt": "Contemporary premium public interior using HPL for built-in lockers, wall cladding and a thin compact laminate table, realistic Russian-European architecture, precise seams, black compact edges visible where appropriate, warm daylight, restrained material palette, editorial architecture photography, empty foreground, text-free, unbranded, straight geometry, 16:9",
+      "parameters": { "aspectRatio": "16:9", "resolution": "2k", "quality": "high", "output": "2688x1520" },
+      "rawFile": "/media/lemark/raw/images/scene-05-furniture.png",
+      "selectedFile": "/media/lemark/selected/images/scene-05-furniture.png"
+    },
+    {
+      "scene": 6,
+      "kind": "image",
+      "purpose": "Ventilated facade application",
+      "model": "gpt_image_2",
+      "generationId": "8ae54a4f-5a6e-4fdb-acfe-7714f35f6be3",
+      "prompt": "Modern public building facade clad in large-format HPL panels, precise ventilated facade joints and believable mounting, sophisticated warm wood decor with deep neutral panels, realistic urban landscaping, overcast cinematic daylight, premium architectural photography, stable straight geometry, no signage, text-free, unbranded, 16:9",
+      "parameters": { "aspectRatio": "16:9", "resolution": "2k", "quality": "high", "output": "2688x1520" },
+      "rawFile": "/media/lemark/raw/images/scene-06-facade.png",
+      "selectedFile": "/media/lemark/selected/images/scene-06-facade.png"
+    },
+    {
+      "scene": 7,
+      "kind": "image",
+      "purpose": "Clean room and laboratory application",
+      "model": "gpt_image_2",
+      "generationId": "83199d20-205b-4889-b4d6-fbc2cb6024ba",
+      "prompt": "High-end clinical clean room and laboratory interior with seamless HPL wall panels, chemical-resistant laboratory worktop and compact laminate cabinetry, realistic hygienic detailing, soft neutral white and graphite palette, controlled bright light, contemporary but not futuristic, physically accurate straight architecture, empty foreground, text-free, unbranded, 16:9",
+      "parameters": { "aspectRatio": "16:9", "resolution": "2k", "quality": "high", "output": "2688x1520" },
+      "rawFile": "/media/lemark/raw/images/scene-07-clean-room.png",
+      "selectedFile": "/media/lemark/selected/images/scene-07-clean-room.png"
+    },
+    {
+      "scene": 8,
+      "kind": "image",
+      "purpose": "Passenger rail application",
+      "model": "gpt_image_2",
+      "generationId": "99c9fa94-6ff8-42dd-9a97-fc3704984943",
+      "prompt": "Modern passenger rail interior using durable HPL wall panels, tables and partitions, precise real-world transportation engineering, subtle warm wood and neutral decor, clean high-traffic environment, cinematic practical lighting, empty foreground, stable straight geometry, text-free, no signage, unbranded, photorealistic, 16:9",
+      "parameters": { "aspectRatio": "16:9", "resolution": "2k", "quality": "high", "output": "2688x1520" },
+      "rawFile": "/media/lemark/raw/images/scene-08-transport.png",
+      "selectedFile": "/media/lemark/selected/images/scene-08-transport.png"
+    },
+    {
+      "scene": 9,
+      "kind": "image",
+      "purpose": "Final architectural panel composition",
+      "model": "gpt_image_2",
+      "generationId": "8254c456-a91a-447e-9e17-75dbb6e54a85",
+      "prompt": "Final premium hero composition of several HPL laminate panels arranged as a precise architectural sculpture, restrained mix of warm wood, mineral stone, solid red accent and dark compact-core edges, dramatic but clean studio lighting, graphite space, generous negative space on the left for website text, high-end industrial brand campaign, photorealistic, stable straight panels, text-free, unbranded, 16:9",
+      "parameters": { "aspectRatio": "16:9", "resolution": "2k", "quality": "high", "output": "2688x1520" },
+      "rawFile": "/media/lemark/raw/images/scene-09-final-hero.png",
+      "selectedFile": "/media/lemark/selected/images/scene-09-final-hero.png"
+    },
+    {
+      "scene": 1,
+      "kind": "video",
+      "purpose": "Scrub clip: layered paper macro",
+      "model": "seedance1_5",
+      "generationId": "5defb780-3dbf-49cf-9829-3bc58220f93e",
+      "prompt": "Very slow macro dolly forward along the layered kraft paper edges. Thin highlights travel gently across resin-coated fibers. The stack remains geometrically stable and tack sharp. Finish on a closer calm material frame, single continuous take.",
+      "parameters": { "duration": 4, "resolution": "720p", "aspectRatio": "16:9", "generateAudio": false, "seed": 664219, "startImage": "/media/lemark/selected/images/scene-01-raw-layers.png" },
+      "rawFile": "/media/lemark/raw/videos/scene-01-raw-layers.mp4",
+      "selectedFile": "/media/lemark/selected/videos/scene-01-raw-layers.mp4"
+    },
+    {
+      "scene": 2,
+      "kind": "video",
+      "purpose": "Scrub clip: decor relief",
+      "model": "seedance1_5",
+      "generationId": "a53179b3-74b6-46c2-b10a-d97a4fb69273",
+      "prompt": "Slow lateral camera glide over the HPL faces while controlled raking light reveals micro embossing and the dense dark core. Flat planes remain rigid, aligned and physically believable. Single continuous take, no cuts.",
+      "parameters": { "duration": 4, "resolution": "720p", "aspectRatio": "16:9", "generateAudio": false, "seed": 693183, "startImage": "/media/lemark/selected/images/scene-02-decor.png" },
+      "rawFile": "/media/lemark/raw/videos/scene-02-decor.mp4",
+      "selectedFile": "/media/lemark/selected/videos/scene-02-decor.mp4"
+    },
+    {
+      "scene": 3,
+      "kind": "video",
+      "purpose": "Scrub clip: industrial press",
+      "model": "seedance1_5",
+      "generationId": "dce2c4cc-146f-498c-814b-95006573f15f",
+      "prompt": "Slow controlled tracking move beside the large industrial HPL press. The laminate pack advances minimally and realistically on the line, with only subtle warm heat haze. Machinery geometry remains stable, single continuous documentary take.",
+      "parameters": { "duration": 4, "resolution": "720p", "aspectRatio": "16:9", "generateAudio": false, "seed": 158718, "startImage": "/media/lemark/selected/images/scene-03-press.png" },
+      "rawFile": "/media/lemark/raw/videos/scene-03-press.mp4",
+      "selectedFile": "/media/lemark/selected/videos/scene-03-press.mp4"
+    },
+    {
+      "scene": 4,
+      "kind": "video",
+      "purpose": "Scrub clip: finished compact panel",
+      "model": "seedance1_5",
+      "generationId": "6f869e41-62ac-49f2-aef0-f824a9169900",
+      "prompt": "Very slow controlled 18-degree orbit around the finished HPL panel. Raking light travels across the mineral face and reveals the dense dark core edge. The sheet remains perfectly flat and proportionally stable, single take.",
+      "parameters": { "duration": 4, "resolution": "720p", "aspectRatio": "16:9", "generateAudio": false, "seed": 210157, "startImage": "/media/lemark/selected/images/scene-04-product.png" },
+      "rawFile": "/media/lemark/raw/videos/scene-04-product.mp4",
+      "selectedFile": "/media/lemark/selected/videos/scene-04-product.mp4"
+    },
+    {
+      "scene": 5,
+      "kind": "video",
+      "purpose": "Scrub clip: furniture interior",
+      "model": "seedance1_5",
+      "generationId": "30131da9-d659-4bf0-b5e8-007bf4ffa81a",
+      "prompt": "Smooth slow lateral camera move through the contemporary interior, passing HPL locker fronts and the thin compact tabletop. Doors, seams and black core edges stay straight and aligned. Natural daylight shifts subtly, single take.",
+      "parameters": { "duration": 4, "resolution": "720p", "aspectRatio": "16:9", "generateAudio": false, "seed": 126460, "startImage": "/media/lemark/selected/images/scene-05-furniture.png" },
+      "rawFile": "/media/lemark/raw/videos/scene-05-furniture.mp4",
+      "selectedFile": "/media/lemark/selected/videos/scene-05-furniture.mp4"
+    },
+    {
+      "scene": 6,
+      "kind": "video",
+      "purpose": "Scrub clip: facade",
+      "model": "seedance1_5",
+      "generationId": "4c1b8049-e5c4-48eb-adc8-aab77da11378",
+      "prompt": "Slow upward and lateral architectural movement along the HPL ventilated facade. Panel joints and window lines remain precise and stable while soft overcast daylight travels across the surfaces. One continuous take.",
+      "parameters": { "duration": 4, "resolution": "720p", "aspectRatio": "16:9", "generateAudio": false, "seed": 850316, "startImage": "/media/lemark/selected/images/scene-06-facade.png" },
+      "rawFile": "/media/lemark/raw/videos/scene-06-facade.mp4",
+      "selectedFile": "/media/lemark/selected/videos/scene-06-facade.mp4"
+    },
+    {
+      "scene": 7,
+      "kind": "video",
+      "purpose": "Scrub clip: clean room",
+      "model": "seedance1_5",
+      "generationId": "683aa69c-5444-44b2-8929-211e8eeff213",
+      "prompt": "Slow stabilized push through the clean laboratory. The camera passes HPL wall panels and the chemical-resistant worktop while a soft highlight demonstrates the smooth nonporous surface. Architecture remains straight and stable, one continuous take.",
+      "parameters": { "duration": 4, "resolution": "720p", "aspectRatio": "16:9", "generateAudio": false, "seed": 300848, "startImage": "/media/lemark/selected/images/scene-07-clean-room.png" },
+      "rawFile": "/media/lemark/raw/videos/scene-07-clean-room.mp4",
+      "selectedFile": "/media/lemark/selected/videos/scene-07-clean-room.mp4"
+    },
+    {
+      "scene": 8,
+      "kind": "video",
+      "purpose": "Scrub clip: transport",
+      "model": "seedance1_5",
+      "generationId": "750ec15b-5591-4e18-9b96-f23aa6b24484",
+      "prompt": "Smooth slow forward camera movement through the passenger rail interior. HPL panels, tables, partitions and seat geometry remain consistent and stable while exterior daylight moves subtly through the windows. One continuous take.",
+      "parameters": { "duration": 4, "resolution": "720p", "aspectRatio": "16:9", "generateAudio": false, "seed": 689538, "startImage": "/media/lemark/selected/images/scene-08-transport.png" },
+      "rawFile": "/media/lemark/raw/videos/scene-08-transport.mp4",
+      "selectedFile": "/media/lemark/selected/videos/scene-08-transport.mp4"
+    },
+    {
+      "scene": 9,
+      "kind": "video",
+      "purpose": "Scrub clip: final architectural sculpture",
+      "model": "seedance1_5",
+      "generationId": "2f80a5b0-70d6-4353-a981-3951d0eb1576",
+      "prompt": "Very slow pull-back revealing the architectural sculpture of HPL panels. Lighting settles into a stable final composition with clear negative space on the left for HTML copy. All panels stay straight and rigid, single continuous take.",
+      "parameters": { "duration": 4, "resolution": "720p", "aspectRatio": "16:9", "generateAudio": false, "seed": 477513, "startImage": "/media/lemark/selected/images/scene-09-final-hero.png" },
+      "rawFile": "/media/lemark/raw/videos/scene-09-final-hero.mp4",
+      "selectedFile": "/media/lemark/selected/videos/scene-09-final-hero.mp4"
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+node_modules/
+.next/
+out/
+playwright-report/
+test-results/
+.env
+.env.local
+*.log
+public/media/lemark/raw/videos/*.tmp
+public/media/lemark/processed/desktop/*.mov
+public/media/lemark/processed/mobile/*.mov

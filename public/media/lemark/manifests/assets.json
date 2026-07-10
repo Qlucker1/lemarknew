@@ -1,0 +1,110 @@
+{
+  "schemaVersion": 1,
+  "createdAt": "2026-07-10T17:05:00+03:00",
+  "sourceOfTruth": "/media/lemark/manifests/generations.json",
+  "hero": {
+    "master": {
+      "path": "/media/lemark/processed/desktop/hero-master.mov",
+      "container": "QuickTime",
+      "codec": "ProRes LT",
+      "durationSeconds": 36.375,
+      "frameRate": 24,
+      "audio": false,
+      "purpose": "Mezzanine assembled from nine selected Higgsfield clips"
+    },
+    "desktop": {
+      "path": "/media/lemark/processed/desktop/hero-desktop.mp4",
+      "width": 1280,
+      "height": 720,
+      "codec": "H.264 High",
+      "pixelFormat": "yuv420p",
+      "frameRate": 24,
+      "durationSeconds": 36.375,
+      "gopFrames": 12,
+      "fastStart": true,
+      "audio": false,
+      "sizeBytes": 14212133
+    },
+    "mobile": {
+      "path": "/media/lemark/processed/mobile/hero-mobile.mp4",
+      "width": 720,
+      "height": 1280,
+      "codec": "H.264 High",
+      "pixelFormat": "yuv420p",
+      "frameRate": 24,
+      "durationSeconds": 36.375,
+      "gopFrames": 12,
+      "fastStart": true,
+      "audio": false,
+      "derivation": "center crop and scale from the 16:9 master",
+      "sizeBytes": 8800796
+    },
+    "posters": [
+      { "path": "/media/lemark/processed/posters/hero-desktop.jpg", "width": 1280, "height": 720, "sizeBytes": 84735 },
+      { "path": "/media/lemark/processed/posters/hero-desktop.webp", "width": 1280, "height": 720, "sizeBytes": 57870 },
+      { "path": "/media/lemark/processed/posters/hero-mobile.jpg", "width": 720, "height": 1280, "sizeBytes": 60362 },
+      { "path": "/media/lemark/processed/posters/hero-mobile.webp", "width": 720, "height": 1280, "sizeBytes": 38704 }
+    ]
+  },
+  "sceneOrder": [
+    "scene-01-raw-layers",
+    "scene-02-decor",
+    "scene-03-press",
+    "scene-04-product",
+    "scene-05-furniture",
+    "scene-06-facade",
+    "scene-07-clean-room",
+    "scene-08-transport",
+    "scene-09-final-hero"
+  ],
+  "thumbnails": [
+    "/media/lemark/processed/thumbnails/scene-01-raw-layers.webp",
+    "/media/lemark/processed/thumbnails/scene-02-decor.webp",
+    "/media/lemark/processed/thumbnails/scene-03-press.webp",
+    "/media/lemark/processed/thumbnails/scene-04-product.webp",
+    "/media/lemark/processed/thumbnails/scene-05-furniture.webp",
+    "/media/lemark/processed/thumbnails/scene-06-facade.webp",
+    "/media/lemark/processed/thumbnails/scene-07-clean-room.webp",
+    "/media/lemark/processed/thumbnails/scene-08-transport.webp",
+    "/media/lemark/processed/thumbnails/scene-09-final-hero.webp"
+  ],
+  "brand": {
+    "source": "https://lemarkllc.ru/",
+    "files": ["/brand/lemark-black.svg", "/brand/lemark-white.svg", "/favicon.png"]
+  },
+  "catalogDecors": {
+    "source": "https://lemarkllc.ru/katalog-dekorov-hpl/",
+    "files": [
+      "/decors/0205-zvezdnaya-noch.jpg",
+      "/decors/0401-granit-sardinia.jpg",
+      "/decors/0402-evora-seraya.jpg",
+      "/decors/0403-evora-bezhevaya.jpg",
+      "/decors/0602-klen-vankuver.jpg",
+      "/decors/0603-dub-venge.jpg",
+      "/decors/0607-vyaz-karamel.jpg",
+      "/decors/0804-polyarnoe-siyanie.jpg",
+      "/decors/6001-shalfei.jpg",
+      "/decors/6006-terrakot.jpg",
+      "/decors/6007-asfalt.jpg",
+      "/decors/shtrihlak-svetlyi.jpg"
+    ]
+  },
+  "factoryReferences": {
+    "source": "https://lemarkllc.ru/",
+    "usage": "visual grounding and section imagery; factory-04 was the reference for generated scene 03",
+    "files": [
+      "/media/lemark/raw/images/references/factory-01.webp",
+      "/media/lemark/raw/images/references/factory-02.webp",
+      "/media/lemark/raw/images/references/factory-03.webp",
+      "/media/lemark/raw/images/references/factory-04.webp",
+      "/media/lemark/raw/images/references/factory-05.webp",
+      "/media/lemark/raw/images/references/factory-06.webp",
+      "/media/lemark/raw/images/references/factory-07.webp"
+    ]
+  },
+  "designConcept": {
+    "repositoryPath": "docs/design-concepts/hero-concept.png",
+    "generator": "built-in Image Gen",
+    "purpose": "composition and visual-language reference only; official logo and verified copy override generated marks/text"
+  }
+}
