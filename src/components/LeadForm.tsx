@@ -74,7 +74,7 @@ export function LeadForm() {
 
   return (
     <section className="lead-section" id="contact" data-testid="lead-form-section">
-      <div className="lead-intro"><span>14 / ВАШ ПРОЕКТ</span><h2>Расскажите о задаче — подберём HPL под проект</h2><p>Укажите назначение, объём, толщину и желаемую поверхность. Можно приложить спецификацию, чертёж или техническое задание.</p><div className="lead-contacts"><a href={siteFacts.phoneHref} onClick={() => trackEvent("phone_click", { placement: "lead" })}>{siteFacts.phoneDisplay}</a><a href={`mailto:${siteFacts.email}`} onClick={() => trackEvent("email_click", { placement: "lead" })}>{siteFacts.email}</a><span>{siteFacts.hours}</span><address>{siteFacts.address}</address></div></div>
+      <div className="lead-intro"><span>04 / ОБСУДИТЬ ЗАДАЧУ</span><h2>Обсудим задачу — подберём HPL под проект</h2><p>Укажите назначение, объём, толщину и желаемую поверхность. Можно приложить спецификацию, чертёж или техническое задание.</p><div className="lead-contacts"><a href={siteFacts.phoneHref} onClick={() => trackEvent("phone_click", { placement: "lead" })}>{siteFacts.phoneDisplay}</a><a href={`mailto:${siteFacts.email}`} onClick={() => trackEvent("email_click", { placement: "lead" })}>{siteFacts.email}</a><span>{siteFacts.hours}</span><address>{siteFacts.address}</address></div></div>
       <form className="lead-form" id="lead-form" onSubmit={handleSubmit(submit)} onFocus={markStarted} noValidate>
         <div className="form-grid">
           <Field label="Имя" error={errors.name?.message}><input autoComplete="name" {...register("name")} aria-invalid={Boolean(errors.name)} /></Field>

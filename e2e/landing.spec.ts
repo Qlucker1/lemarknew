@@ -12,7 +12,7 @@ test("desktop landing renders, scrubs both directions and stays console-clean", 
   await page.goto("/", { waitUntil: "domcontentloaded" });
   await expect(page).toHaveTitle(/Производитель HPL/);
   await expect(page.getByRole("heading", { level: 1 })).toContainText("Производим HPL");
-  const video = page.locator("video");
+  const video = page.locator(".hero-video");
   await expect(video).toHaveAttribute("src", /hero-desktop\.mp4/);
   await page.waitForFunction(() => (document.querySelector("video") as HTMLVideoElement)?.readyState >= 2);
   await expect(page.locator(".scroll-hero")).toHaveAttribute("data-scroll-ready", "true");
@@ -20,6 +20,11 @@ test("desktop landing renders, scrubs both directions and stays console-clean", 
 
   const heroHeight = await page.locator(".scroll-hero").evaluate((element) => element.scrollHeight);
   const heroRange = heroHeight - (await page.evaluate(() => window.innerHeight));
+  await page.evaluate((y) => window.scrollTo(0, y), Math.round(heroRange * 0.128));
+  await page.waitForTimeout(500);
+  const quietOpacity = await page.locator(".hero-chapter").evaluate((element) => Number.parseFloat(getComputedStyle(element).opacity));
+  expect(quietOpacity).toBeLessThan(0.08);
+
   await page.evaluate((y) => window.scrollTo(0, y), Math.round(heroRange * 0.52));
   await page.waitForTimeout(1000);
   const midTime = await video.evaluate((element) => (element as HTMLVideoElement).currentTime);
@@ -73,7 +78,7 @@ test("mobile uses mobile media, menu and responsive sections", async ({ page }, 
   const errors: string[] = [];
   page.on("pageerror", (error) => errors.push(error.message));
   await page.goto("/", { waitUntil: "domcontentloaded" });
-  const video = page.locator("video");
+  const video = page.locator(".hero-video");
   await expect(video).toHaveAttribute("src", /hero-mobile\.mp4/);
   await expect(page.getByRole("heading", { level: 1 })).toBeVisible();
   await page.screenshot({ path: screenshot("playwright-mobile-390-hero.png") });
@@ -86,7 +91,7 @@ test("mobile uses mobile media, menu and responsive sections", async ({ page }, 
   await page.getByRole("button", { name: "Закрыть меню" }).click();
 
   await page.goto("/#applications", { waitUntil: "domcontentloaded" });
-  await expect(page.locator(".application-card")).toHaveCount(6);
+  await expect(page.locator(".application-card")).toHaveCount(4);
   await page.screenshot({ path: screenshot("playwright-mobile-390-applications.png") });
   expect(errors).toEqual([]);
 });
@@ -121,7 +126,8 @@ test("reduced motion renders static chapters without video", async ({ page }, te
   await expect(page.locator(".reduced-hero")).toBeVisible();
   await expect(page.locator(".reduced-hero-cover h1")).toBeVisible();
   await expect(page.locator(".reduced-chapters article")).toHaveCount(6);
-  await expect(page.locator("video")).toHaveCount(0);
+  await expect(page.locator(".hero-video")).toHaveCount(0);
+  await expect(page.locator(".process-window video")).toHaveCount(1);
   await page.screenshot({ path: screenshot("playwright-reduced-motion.png") });
 });
 

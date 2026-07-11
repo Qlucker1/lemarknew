@@ -201,6 +201,18 @@
       "parameters": { "duration": 4, "resolution": "720p", "aspectRatio": "16:9", "generateAudio": false, "seed": 477513, "startImage": "/media/lemark/selected/images/scene-09-final-hero.png" },
       "rawFile": "/media/lemark/raw/videos/scene-09-final-hero.mp4",
       "selectedFile": "/media/lemark/selected/videos/scene-09-final-hero.mp4"
+    },
+    {
+      "scene": "production-window-v2",
+      "kind": "video",
+      "purpose": "Editorial lower-page process window",
+      "model": "seedance1_5",
+      "generationId": "bbd27750-67ba-42dd-8cf3-56afc7d4fe49",
+      "prompt": "Locked-off premium industrial documentary shot of a real HPL production line. A finished laminate sheet advances slowly and steadily beneath the press rollers while warm practical factory light moves subtly across the surface. Machinery geometry stays perfectly stable, no people near moving equipment, no camera shake, no cuts, no text, no logos, one continuous calm take designed for a website process window.",
+      "parameters": { "duration": 4, "resolution": "720p", "aspectRatio": "16:9", "generateAudio": false, "seed": 388770, "startImage": "/media/lemark/selected/images/scene-03-press.png" },
+      "rawFile": "/media/lemark/raw/videos/sections/production-window-source.mp4",
+      "selectedFile": "/media/lemark/processed/sections/production-window.mp4",
+      "processedFiles": ["/media/lemark/processed/sections/production-window.mp4", "/media/lemark/processed/sections/production-window.webp"]
     }
   ]
 }

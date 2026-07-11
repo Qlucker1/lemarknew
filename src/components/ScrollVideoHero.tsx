@@ -18,11 +18,13 @@ export function ScrollVideoHero() {
   const renderedTime = useRef(0);
   const duration = useRef<number>(media.hero.duration);
   const rafId = useRef(0);
-  const [activeIndex, setActiveIndex] = useState(0);
+  const [activeIndex, setActiveIndex] = useState<number | null>(0);
+  const [visualIndex, setVisualIndex] = useState(0);
   const [ready, setReady] = useState(false);
   const [videoError, setVideoError] = useState(false);
   const [reducedMotion, setReducedMotion] = useState(false);
-  const chapter = heroChapters[activeIndex];
+  const chapter = heroChapters[activeIndex ?? visualIndex];
+  const visualChapter = heroChapters[visualIndex];
 
   useEffect(() => {
     const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
@@ -72,8 +74,16 @@ export function ScrollVideoHero() {
           const progress = clamp(self.progress, 0, 1);
           targetTime.current = progress * duration.current;
           if (progressRef.current) progressRef.current.style.transform = `scaleY(${progress})`;
-          const next = heroChapters.findIndex((item) => progress >= item.start && progress <= item.end);
-          if (next >= 0) setActiveIndex((current) => (current === next ? current : next));
+          const next = heroChapters.findIndex((item, index) => {
+            const quietTail = index === heroChapters.length - 1 ? 0 : 0.024;
+            return progress >= item.start && progress <= item.end - quietTail;
+          });
+          if (next >= 0) {
+            setVisualIndex((current) => (current === next ? current : next));
+            setActiveIndex((current) => (current === next ? current : next));
+          } else {
+            setActiveIndex((current) => (current === null ? current : null));
+          }
         },
       });
       ScrollTrigger.refresh();
@@ -111,7 +121,7 @@ export function ScrollVideoHero() {
     setReady(true);
   };
 
-  const trackedClick = (event: string) => trackEvent(event as AnalyticsEvent, { chapter: chapter.id });
+  const trackedClick = (event: string) => trackEvent(event as AnalyticsEvent, { chapter: visualChapter.id });
 
   return (
     <section className="scroll-hero" ref={containerRef} aria-label="Путь HPL от материала до проекта" data-testid="scroll-hero">
@@ -124,7 +134,7 @@ export function ScrollVideoHero() {
           preload="metadata"
           aria-hidden="true"
           tabIndex={-1}
-          style={{ objectPosition: chapter.focalPoint }}
+          style={{ objectPosition: visualChapter.focalPoint }}
           onLoadedMetadata={onMetadata}
           onLoadedData={() => setReady(true)}
           onError={() => setVideoError(true)}
@@ -140,11 +150,11 @@ export function ScrollVideoHero() {
           <AnimatePresence mode="wait" initial={false}>
             <motion.div
               key={chapter.id}
-              className={`hero-chapter ${activeIndex === heroChapters.length - 1 ? "glass-strong hero-final-panel" : ""}`}
-              initial={{ opacity: 0, filter: "blur(10px)", y: 22 }}
-              animate={{ opacity: 1, filter: "blur(0px)", y: 0 }}
-              exit={{ opacity: 0, filter: "blur(8px)", y: -18 }}
-              transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
+              className={`hero-chapter ${visualIndex === heroChapters.length - 1 ? "glass-strong hero-final-panel" : ""}`}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: activeIndex === null ? 0 : 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
             >
               <p className="hero-eyebrow">{chapter.eyebrow}</p>
               <h1>{chapter.title}</h1>
@@ -153,7 +163,7 @@ export function ScrollVideoHero() {
                 <a className="button button-primary" href={chapter.primaryCta.href} onClick={() => trackedClick(chapter.primaryCta.event)}>{chapter.primaryCta.label}<Arrow /></a>
                 {chapter.secondaryCta ? <a className="button button-ghost" href={chapter.secondaryCta.href} onClick={() => trackedClick(chapter.secondaryCta!.event)}>{chapter.secondaryCta.label}</a> : null}
               </div>
-              {activeIndex === 0 ? (
+              {visualIndex === 0 ? (
                 <div className="hero-facts" aria-label="Ключевые показатели">
                   <span>{siteFacts.thickness.label}</span>
                   <span>{siteFacts.capacity.label}</span>
@@ -164,12 +174,12 @@ export function ScrollVideoHero() {
           </AnimatePresence>
         </div>
 
-        <aside className="hero-progress glass-subtle" aria-label={`Глава ${activeIndex + 1} из ${heroChapters.length}`}>
-          <span className="chapter-current">{String(activeIndex + 1).padStart(2, "0")}</span>
+        <aside className="hero-progress glass-subtle" aria-label={`Глава ${visualIndex + 1} из ${heroChapters.length}`}>
+          <span className="chapter-current">{String(visualIndex + 1).padStart(2, "0")}</span>
           <span className="chapter-total">/ {String(heroChapters.length).padStart(2, "0")}</span>
           <span className="progress-track"><span ref={progressRef} /></span>
         </aside>
-        {activeIndex === 0 ? <p className="scroll-hint">Прокрутите, чтобы пройти путь материала <span aria-hidden="true">↓</span></p> : null}
+        {visualIndex === 0 ? <p className="scroll-hint">Прокрутите, чтобы пройти путь материала <span aria-hidden="true">↓</span></p> : null}
       </div>
     </section>
   );
