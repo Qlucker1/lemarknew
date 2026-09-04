@@ -38,7 +38,7 @@ Reference concept: `docs/design-concepts/hero-concept.png`.
 
 - Slow dolly, macro push, lateral tracking, controlled orbit до 20°.
 - UI: спокойный opacity-переход 0.36 s, фиксированный верхний якорь текста, короткая пустая пауза между главами.
-- Media: scroll управляет временем видео напрямую; плавное инерционное догоняющее движение без перехвата колеса.
+- Media: scroll управляет временем видео напрямую; seek-запросы сериализованы, а copy меняется только после показа декодированного кадра.
 - Reduced motion: poster + обычные главы, без scrub/parallax/blur.
 
 ## Components

@@ -37,7 +37,7 @@ test("desktop landing renders, scrubs both directions and stays console-clean", 
 
   await page.evaluate((y) => window.scrollTo(0, y), Math.round(heroRange * 0.185));
   await page.waitForFunction(() => {
-    const progress = Number((document.querySelector(".scroll-hero") as HTMLElement)?.dataset.renderedProgress);
+    const progress = Number((document.querySelector(".scroll-hero") as HTMLElement)?.dataset.presentedProgress);
     return progress > 0.175 && progress < 0.195;
   });
   await page.waitForTimeout(450);

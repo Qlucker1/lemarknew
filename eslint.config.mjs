@@ -5,5 +5,5 @@ import nextTs from "eslint-config-next/typescript";
 export default defineConfig([
   ...nextVitals,
   ...nextTs,
-  globalIgnores([".next/**", "public/media/lemark/raw/**", "artifacts/**"]),
+  globalIgnores([".next/**", ".netlify/**", "public/media/lemark/raw/**", "artifacts/**"]),
 ]);

@@ -23,6 +23,7 @@ export function ScrollVideoHero() {
   const transitionRef = useRef<HTMLSpanElement>(null);
   const targetTime = useRef(0);
   const renderedTime = useRef(0);
+  const presentedTime = useRef(0);
   const duration = useRef<number>(media.hero.duration);
   const rafId = useRef(0);
   const [activeIndex, setActiveIndex] = useState<number | null>(0);
@@ -60,8 +61,10 @@ export function ScrollVideoHero() {
       const damping = Math.abs(delta) > duration.current * 0.18 ? 0.34 : 1 - Math.exp(-elapsed * 13);
       renderedTime.current += delta * damping;
       const renderedProgress = clamp(renderedTime.current / duration.current, 0, 1);
+      const presentedProgress = clamp(presentedTime.current / duration.current, 0, 1);
       container.dataset.renderedProgress = renderedProgress.toFixed(4);
-      if (video.readyState >= 1 && Math.abs(video.currentTime - renderedTime.current) > 1 / 30) {
+      container.dataset.presentedProgress = presentedProgress.toFixed(4);
+      if (video.readyState >= 1 && !video.seeking && Math.abs(video.currentTime - renderedTime.current) > 1 / 30) {
         try {
           video.currentTime = clamp(renderedTime.current, 0, Math.max(0, duration.current - 0.04));
         } catch {
@@ -72,7 +75,7 @@ export function ScrollVideoHero() {
 
       const next = heroChapters.findIndex((item, index) => {
         const quietTail = index === heroChapters.length - 1 ? 0 : 0.03;
-        return renderedProgress >= item.start && renderedProgress <= item.end - quietTail;
+        return presentedProgress >= item.start && presentedProgress <= item.end - quietTail;
       });
       if (next >= 0) {
         setVisualIndex((current) => (current === next ? current : next));
@@ -82,9 +85,9 @@ export function ScrollVideoHero() {
       }
 
       if (transitionRef.current) {
-        const boundary = heroChapters.slice(0, -1).find((item) => renderedProgress > item.end - 0.03 && renderedProgress < item.end);
+        const boundary = heroChapters.slice(0, -1).find((item) => presentedProgress > item.end - 0.03 && presentedProgress < item.end);
         if (boundary) {
-          const phase = (renderedProgress - (boundary.end - 0.03)) / 0.03;
+          const phase = (presentedProgress - (boundary.end - 0.03)) / 0.03;
           transitionRef.current.style.opacity = String(Math.sin(Math.PI * phase) * 0.72);
           transitionRef.current.style.transform = `translate3d(${-120 + phase * 240}vw,0,0) skewX(-7deg)`;
         } else {
@@ -94,6 +97,15 @@ export function ScrollVideoHero() {
       rafId.current = window.requestAnimationFrame(tick);
     };
     rafId.current = window.requestAnimationFrame(tick);
+
+    let videoFrameId = 0;
+    const syncPresentedTime = () => { presentedTime.current = video.currentTime; };
+    const onVideoFrame: VideoFrameRequestCallback = (_now, metadata) => {
+      presentedTime.current = metadata.mediaTime;
+      videoFrameId = video.requestVideoFrameCallback(onVideoFrame);
+    };
+    if ("requestVideoFrameCallback" in video) videoFrameId = video.requestVideoFrameCallback(onVideoFrame);
+    video.addEventListener("seeked", syncPresentedTime);
 
     const scrollTrigger = ScrollTrigger.create({
       trigger: container,
@@ -122,7 +134,10 @@ export function ScrollVideoHero() {
       scrollTrigger.kill();
       delete container.dataset.scrollReady;
       delete container.dataset.renderedProgress;
+      delete container.dataset.presentedProgress;
       window.cancelAnimationFrame(rafId.current);
+      if (videoFrameId) video.cancelVideoFrameCallback(videoFrameId);
+      video.removeEventListener("seeked", syncPresentedTime);
       window.removeEventListener("pointerdown", primeVideo);
       video.removeAttribute("src");
       video.load();
