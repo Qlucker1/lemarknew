@@ -213,6 +213,38 @@
       "rawFile": "/media/lemark/raw/videos/sections/production-window-source.mp4",
       "selectedFile": "/media/lemark/processed/sections/production-window.mp4",
       "processedFiles": ["/media/lemark/processed/sections/production-window.mp4", "/media/lemark/processed/sections/production-window.webp"]
+    },
+    {
+      "scene": "hero-v2-composite",
+      "kind": "video_edit",
+      "purpose": "Five-chapter scrub-friendly HERO v2",
+      "model": "ffmpeg 8.1.2",
+      "generationId": null,
+      "prompt": null,
+      "sourceGenerationIds": [
+        "bbd27750-67ba-42dd-8cf3-56afc7d4fe49",
+        "30131da9-d659-4bf0-b5e8-007bf4ffa81a",
+        "4c1b8049-e5c4-48eb-adc8-aab77da11378",
+        "683aa69c-5444-44b2-8929-211e8eeff213",
+        "750ec15b-5591-4e18-9b96-f23aa6b24484"
+      ],
+      "parameters": {
+        "duration": 17.208333,
+        "frameRate": 24,
+        "audio": false,
+        "desktop": "1280x720, H.264 High, CRF 24, GOP 6, faststart",
+        "mobile": "720x1280, H.264 High, CRF 26, GOP 6, faststart",
+        "transitions": "fade@3.3, smoothleft@6.6, fade@9.9, smoothleft@13.2; each 0.7 seconds"
+      },
+      "rawFile": null,
+      "selectedFile": "/media/lemark/processed/desktop/hero-v2-desktop.mp4",
+      "processedFiles": [
+        "/media/lemark/processed/desktop/hero-v2-desktop.mp4",
+        "/media/lemark/processed/mobile/hero-v2-mobile.mp4",
+        "/media/lemark/processed/posters/hero-v2-desktop.webp",
+        "/media/lemark/processed/posters/hero-v2-mobile.webp"
+      ],
+      "notes": "New edit from verified existing Higgsfield generations; no new Higgsfield generation ID because the CLI session was expired on 2026-09-04."
     }
   ]
 }

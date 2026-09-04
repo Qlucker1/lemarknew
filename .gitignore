@@ -9,3 +9,6 @@ test-results/
 public/media/lemark/raw/videos/*.tmp
 public/media/lemark/processed/desktop/*.mov
 public/media/lemark/processed/mobile/*.mov
+
+# Local Netlify folder
+.netlify

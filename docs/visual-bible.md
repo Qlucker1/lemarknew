@@ -23,7 +23,7 @@ Reference concept: `docs/design-concepts/hero-concept.png`.
 ## Layout
 
 - 12 колонок, max 1520 px, desktop gutters 32–48 px, mobile 18–22 px.
-- HERO 100svh внутри 610vh desktop / 420vh mobile.
+- HERO 100svh внутри 520vh desktop / 470vh mobile.
 - Асимметрия: copy 5 колонок, visual 7 колонок; chapter rail справа.
 - Следующие секции чередуют full-bleed stage, открытую editorial rail и mosaic. Не повторять одинаковую сетку.
 
@@ -37,8 +37,8 @@ Reference concept: `docs/design-concepts/hero-concept.png`.
 ## Motion
 
 - Slow dolly, macro push, lateral tracking, controlled orbit до 20°.
-- UI: opacity + blur + 20 px y, 0.55 s.
-- Media: scale 1 → 1.035, raking highlight, без bounce и scroll hijack.
+- UI: спокойный opacity-переход 0.36 s, фиксированный верхний якорь текста, короткая пустая пауза между главами.
+- Media: scroll управляет временем видео напрямую; плавное инерционное догоняющее движение без перехвата колеса.
 - Reduced motion: poster + обычные главы, без scrub/parallax/blur.
 
 ## Components

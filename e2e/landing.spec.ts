@@ -1,7 +1,4 @@
 import { expect, test } from "@playwright/test";
-import path from "node:path";
-
-const screenshot = (name: string) => path.join(process.cwd(), "artifacts", "screenshots", name);
 
 test("desktop landing renders, scrubs both directions and stays console-clean", async ({ page }, testInfo) => {
   test.skip(!testInfo.project.name.includes("desktop"), "desktop-only flow");
@@ -11,29 +8,51 @@ test("desktop landing renders, scrubs both directions and stays console-clean", 
 
   await page.goto("/", { waitUntil: "domcontentloaded" });
   await expect(page).toHaveTitle(/Производитель HPL/);
-  await expect(page.getByRole("heading", { level: 1 })).toContainText("Производим HPL");
+  await expect(page.getByRole("heading", { level: 1 })).toContainText("Производство HPL пластиков");
   const video = page.locator(".hero-video");
-  await expect(video).toHaveAttribute("src", /hero-desktop\.mp4/);
+  await expect(video).toHaveAttribute("src", /hero-v2-desktop\.mp4/);
   await page.waitForFunction(() => (document.querySelector("video") as HTMLVideoElement)?.readyState >= 2);
   await expect(page.locator(".scroll-hero")).toHaveAttribute("data-scroll-ready", "true");
-  await page.screenshot({ path: screenshot("playwright-desktop-hero.png") });
+  await page.screenshot({ path: testInfo.outputPath("playwright-desktop-hero.png") });
 
   const heroHeight = await page.locator(".scroll-hero").evaluate((element) => element.scrollHeight);
   const heroRange = heroHeight - (await page.evaluate(() => window.innerHeight));
-  await page.evaluate((y) => window.scrollTo(0, y), Math.round(heroRange * 0.128));
-  await page.waitForTimeout(500);
+
+  const headingTops: number[] = [];
+  for (const progress of [0.03, 0.23, 0.43, 0.63, 0.83]) {
+    await page.evaluate(([y]) => window.scrollTo(0, y), [Math.round(heroRange * progress)]);
+    await page.waitForFunction((expected) => {
+      const rendered = Number((document.querySelector(".scroll-hero") as HTMLElement)?.dataset.renderedProgress);
+      return Math.abs(rendered - expected) < 0.004;
+    }, progress);
+    await page.waitForTimeout(400);
+    const visibleTop = await page.locator(".hero-chapter h1").evaluateAll((headings) => {
+      const heading = headings.find((item) => Number.parseFloat(getComputedStyle(item.closest(".hero-chapter") as Element).opacity) > 0.5);
+      return heading?.getBoundingClientRect().top ?? null;
+    });
+    expect(visibleTop).not.toBeNull();
+    headingTops.push(visibleTop!);
+  }
+  expect(Math.max(...headingTops) - Math.min(...headingTops)).toBeLessThanOrEqual(1);
+
+  await page.evaluate((y) => window.scrollTo(0, y), Math.round(heroRange * 0.185));
+  await page.waitForFunction(() => {
+    const progress = Number((document.querySelector(".scroll-hero") as HTMLElement)?.dataset.renderedProgress);
+    return progress > 0.175 && progress < 0.195;
+  });
+  await page.waitForTimeout(450);
   const quietOpacity = await page.locator(".hero-chapter").evaluate((element) => Number.parseFloat(getComputedStyle(element).opacity));
   expect(quietOpacity).toBeLessThan(0.08);
 
   await page.evaluate((y) => window.scrollTo(0, y), Math.round(heroRange * 0.52));
   await page.waitForTimeout(1000);
   const midTime = await video.evaluate((element) => (element as HTMLVideoElement).currentTime);
-  await expect(page.getByRole("heading", { level: 1 })).toContainText(/архитектуры|Фасады/);
+  await expect(page.getByRole("heading", { level: 1 })).toContainText("Безупречное качество");
 
   await page.evaluate((y) => window.scrollTo(0, y), Math.round(heroRange * 0.96));
   await page.waitForTimeout(1000);
   const endTime = await video.evaluate((element) => (element as HTMLVideoElement).currentTime);
-  await expect(page.getByRole("heading", { level: 1 })).toContainText("Подберём тип");
+  await expect(page.getByRole("heading", { level: 1 })).toContainText("Трудногорючий");
 
   await page.evaluate((y) => window.scrollTo(0, y), Math.round(heroRange * 0.42));
   await page.waitForTimeout(1000);
@@ -64,7 +83,7 @@ test("desktop interactions and honest form error state work", async ({ page }, t
   await form.getByRole("button", { name: "Получить расчёт" }).click();
   await expect(form.getByText("Укажите имя")).toBeVisible();
   await expect(form.getByText("Нужно согласие на обработку данных")).toBeVisible();
-  await page.screenshot({ path: screenshot("playwright-desktop-form.png") });
+  await page.screenshot({ path: testInfo.outputPath("playwright-desktop-form.png") });
 
   const response = await page.request.post("/api/lead", {
     multipart: { name: "Тест", company: "LEMARK QA", phone: "+74950000000", email: "qa@example.com", direction: "Мебельное производство", volume: "10 листов", comment: "QA", consent: "true", samples: "false", website: "" },
@@ -79,20 +98,20 @@ test("mobile uses mobile media, menu and responsive sections", async ({ page }, 
   page.on("pageerror", (error) => errors.push(error.message));
   await page.goto("/", { waitUntil: "domcontentloaded" });
   const video = page.locator(".hero-video");
-  await expect(video).toHaveAttribute("src", /hero-mobile\.mp4/);
+  await expect(video).toHaveAttribute("src", /hero-v2-mobile\.mp4/);
   await expect(page.getByRole("heading", { level: 1 })).toBeVisible();
-  await page.screenshot({ path: screenshot("playwright-mobile-390-hero.png") });
+  await page.screenshot({ path: testInfo.outputPath("playwright-mobile-390-hero.png") });
 
   await page.getByRole("button", { name: "Открыть меню" }).click();
   const menu = page.getByRole("dialog", { name: "Навигация" });
   await expect(menu).toBeVisible();
   await expect(menu.getByRole("link", { name: "Образцы", exact: true })).toBeVisible();
-  await page.screenshot({ path: screenshot("playwright-mobile-390-menu.png") });
+  await page.screenshot({ path: testInfo.outputPath("playwright-mobile-390-menu.png") });
   await page.getByRole("button", { name: "Закрыть меню" }).click();
 
   await page.goto("/#applications", { waitUntil: "domcontentloaded" });
   await expect(page.locator(".application-card")).toHaveCount(4);
-  await page.screenshot({ path: screenshot("playwright-mobile-390-applications.png") });
+  await page.screenshot({ path: testInfo.outputPath("playwright-mobile-390-applications.png") });
   expect(errors).toEqual([]);
 });
 
@@ -115,7 +134,7 @@ test("responsive viewport matrix has no page-level horizontal overflow", async (
     await expect(page.getByRole("heading", { level: 1 })).toBeVisible();
     const overflow = await page.evaluate(() => document.documentElement.scrollWidth - window.innerWidth);
     expect(overflow, `${viewport.width}x${viewport.height} horizontal overflow`).toBeLessThanOrEqual(1);
-    await page.screenshot({ path: screenshot(`viewport-${viewport.width}x${viewport.height}.png`) });
+    await page.screenshot({ path: testInfo.outputPath(`viewport-${viewport.width}x${viewport.height}.png`) });
   }
 });
 
@@ -125,15 +144,15 @@ test("reduced motion renders static chapters without video", async ({ page }, te
   await page.goto("/", { waitUntil: "domcontentloaded" });
   await expect(page.locator(".reduced-hero")).toBeVisible();
   await expect(page.locator(".reduced-hero-cover h1")).toBeVisible();
-  await expect(page.locator(".reduced-chapters article")).toHaveCount(6);
+  await expect(page.locator(".reduced-chapters article")).toHaveCount(4);
   await expect(page.locator(".hero-video")).toHaveCount(0);
   await expect(page.locator(".process-window video")).toHaveCount(1);
-  await page.screenshot({ path: screenshot("playwright-reduced-motion.png") });
+  await page.screenshot({ path: testInfo.outputPath("playwright-reduced-motion.png") });
 });
 
 test("hero keeps a readable poster when video loading fails", async ({ page }, testInfo) => {
   test.skip(!testInfo.project.name.includes("desktop"), "desktop-only fallback flow");
-  await page.route("**/hero-desktop.mp4", (route) => route.abort());
+  await page.route("**/hero-v2-desktop.mp4", (route) => route.abort());
   await page.goto("/", { waitUntil: "domcontentloaded" });
   await expect(page.locator(".hero-poster")).not.toHaveClass(/is-hidden/);
   await expect(page.getByRole("heading", { level: 1 })).toBeVisible();

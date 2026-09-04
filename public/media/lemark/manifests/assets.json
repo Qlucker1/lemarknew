@@ -46,6 +46,43 @@
       { "path": "/media/lemark/processed/posters/hero-mobile.webp", "width": 720, "height": 1280, "sizeBytes": 38704 }
     ]
   },
+  "heroV2": {
+    "editScript": "/scripts/media/assemble-hero-v2.ps1",
+    "durationSeconds": 17.208333,
+    "frameRate": 24,
+    "audio": false,
+    "transitions": [
+      { "type": "fade", "durationSeconds": 0.7, "offsetSeconds": 3.3 },
+      { "type": "smoothleft", "durationSeconds": 0.7, "offsetSeconds": 6.6 },
+      { "type": "fade", "durationSeconds": 0.7, "offsetSeconds": 9.9 },
+      { "type": "smoothleft", "durationSeconds": 0.7, "offsetSeconds": 13.2 }
+    ],
+    "desktop": {
+      "path": "/media/lemark/processed/desktop/hero-v2-desktop.mp4",
+      "width": 1280,
+      "height": 720,
+      "codec": "H.264 High",
+      "pixelFormat": "yuv420p",
+      "gopFrames": 6,
+      "fastStart": true,
+      "sizeBytes": 6258877
+    },
+    "mobile": {
+      "path": "/media/lemark/processed/mobile/hero-v2-mobile.mp4",
+      "width": 720,
+      "height": 1280,
+      "codec": "H.264 High",
+      "pixelFormat": "yuv420p",
+      "gopFrames": 6,
+      "fastStart": true,
+      "derivation": "shot-specific 9:16 crops from verified 16:9 source clips",
+      "sizeBytes": 3495131
+    },
+    "posters": [
+      { "path": "/media/lemark/processed/posters/hero-v2-desktop.webp", "width": 1280, "height": 720, "sizeBytes": 82046 },
+      { "path": "/media/lemark/processed/posters/hero-v2-mobile.webp", "width": 720, "height": 1280, "sizeBytes": 51686 }
+    ]
+  },
   "sectionMedia": {
     "productionWindow": {
       "path": "/media/lemark/processed/sections/production-window.mp4",

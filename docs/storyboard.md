@@ -1,26 +1,22 @@
-# Storyboard HERO
+# Storyboard HERO v2
 
-Master target: 32–36 s, 24 fps, no audio. Nine 4-second single-take clips; trims/match cuts may reduce total duration.
+Master: 17.208 s, 24 fps, no audio. Five verified source clips become one scrub-friendly story. Each chapter occupies 20% of the scroll timeline.
 
-| Scene | Time | Visual | Motion | Chapter bridge |
+| Chapter | Time | Visual | Transition | Copy source |
 |---|---:|---|---|---|
-| 01 Raw layers | 0–4 | Kraft layers + resin sheen | Macro dolly | Ch. 1 |
-| 02 Decor | 4–8 | Embossed wood-inspired face | Lateral raking light | Ch. 2 |
-| 03 Press | 8–12 | Realistic HPL press, factory geometry from references | Slow track | Ch. 1/2 transition |
-| 04 Product | 12–16 | Straight HPL sheet, dark core | 20° orbit | Ch. 2 |
-| 05 Furniture | 16–20 | Lockers, tabletop, wall panels | Lateral move | Ch. 3 |
-| 06 Facade | 20–24 | Ventilated public facade | Slow up/lateral | Ch. 4 |
-| 07 Clean room | 24–28 | Lab worktop and wall panels | Stabilized push | Ch. 5 |
-| 08 Transport | 28–32 | Passenger rail interior | Slow forward move | Ch. 6 |
-| 09 Final hero | 32–36 | Sculptural panel composition | Slow pull-back | Ch. 7 |
+| 01 Full cycle | 0–4.0 | HPL production line | 0.7 s fade | current lemarkllc.ru HERO |
+| 02 Decor | 3.3–7.3 | HPL furniture and interior | 0.7 s smooth-left | current lemarkllc.ru HERO |
+| 03 Construction | 6.6–10.6 | Ventilated facade | 0.7 s fade | current lemarkllc.ru HERO |
+| 04 Clean room | 9.9–13.9 | Laboratory interior | 0.7 s smooth-left | current lemarkllc.ru HERO |
+| 05 Transport | 13.2–17.208 | Passenger rail interior | — | current lemarkllc.ru HERO |
 
 ## Continuity
 
-- Plane-filling end frames enable match cuts.
-- Shared graphite/warm-neutral grade and restrained highlights.
-- No cuts inside generated clips, no fast hand-held movement, no text/logos.
-- First and final frames must be usable posters.
+- Calm camera moves remain readable in both scroll directions.
+- Fade and directional transitions avoid optical-flow artifacts.
+- A short copy-free tail before each boundary prevents text collisions.
+- Desktop and mobile crops are encoded independently; both use dense keyframes for seeking.
 
 ## Chapter mapping
 
-`0–14%`, `14–30%`, `30–46%`, `46–62%`, `62–78%`, `78–90%`, `90–100%` exactly follow the master prompt.
+`0–20%`, `20–40%`, `40–60%`, `60–80%`, `80–100%`.
