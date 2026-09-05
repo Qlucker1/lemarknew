@@ -1,12 +1,7 @@
 import type { Metadata, Viewport } from "next";
-import { Cormorant_Garamond, Manrope, Roboto_Condensed } from "next/font/google";
 import { AnalyticsScripts, CookieNotice } from "@/components/AnalyticsScripts";
 import { siteFacts } from "@/content/site-facts";
 import "./globals.css";
-
-const manrope = Manrope({ subsets: ["cyrillic", "latin"], variable: "--font-sans", display: "swap" });
-const condensed = Roboto_Condensed({ subsets: ["cyrillic", "latin"], variable: "--font-display", display: "swap" });
-const serif = Cormorant_Garamond({ subsets: ["cyrillic", "latin"], variable: "--font-serif", weight: ["500", "600"], style: ["normal", "italic"], display: "swap" });
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteFacts.siteUrl),
@@ -34,7 +29,7 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="ru" className={`${manrope.variable} ${condensed.variable} ${serif.variable}`}>
+    <html lang="ru">
       <body>
         <a className="skip-link" href="#main">Перейти к содержимому</a>
         {children}

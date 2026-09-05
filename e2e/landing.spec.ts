@@ -25,13 +25,10 @@ test("desktop landing renders, scrubs both directions and stays console-clean", 
       const rendered = Number((document.querySelector(".scroll-hero") as HTMLElement)?.dataset.renderedProgress);
       return Math.abs(rendered - expected) < 0.004;
     }, progress);
-    await page.waitForTimeout(400);
-    const visibleTop = await page.locator(".hero-chapter h1").evaluateAll((headings) => {
-      const heading = headings.find((item) => Number.parseFloat(getComputedStyle(item.closest(".hero-chapter") as Element).opacity) > 0.5);
-      return heading?.getBoundingClientRect().top ?? null;
-    });
-    expect(visibleTop).not.toBeNull();
-    headingTops.push(visibleTop!);
+    await page.waitForFunction(() => Number.parseFloat(getComputedStyle(document.querySelector(".hero-chapter") as Element).opacity) > 0.5);
+    const box = await page.locator(".hero-chapter h1").boundingBox();
+    expect(box).not.toBeNull();
+    headingTops.push(box!.y);
   }
   expect(Math.max(...headingTops) - Math.min(...headingTops)).toBeLessThanOrEqual(1);
 
@@ -65,7 +62,10 @@ test("desktop landing renders, scrubs both directions and stays console-clean", 
 test("desktop interactions and honest form error state work", async ({ page }, testInfo) => {
   test.skip(!testInfo.project.name.includes("desktop"), "desktop-only flow");
   await page.goto("/#products", { waitUntil: "domcontentloaded" });
-  await page.getByRole("tab", { name: "CP Compact" }).click();
+  await expect(page.locator(".scroll-hero")).toHaveAttribute("data-scroll-ready", "true");
+  const compactTab = page.getByRole("tab", { name: "CP Compact" });
+  await compactTab.click();
+  await expect(compactTab).toHaveAttribute("aria-selected", "true");
   await expect(page.locator(".product-copy h3")).toHaveText("Compact");
 
   await page.goto("/#faq", { waitUntil: "domcontentloaded" });
