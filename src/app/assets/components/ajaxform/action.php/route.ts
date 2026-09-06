@@ -11,7 +11,11 @@ const error = (message: string) => Response.json({ success: false, message }, { 
 
 export async function POST(request: Request) {
   const source = request.headers.get('origin');
-  if (source && source !== new URL(request.url).origin) return new Response('Forbidden', {status:403});
+  // Netlify's adapter may use an internal request origin. Accept only this
+  // project's verified public origins, never an arbitrary forwarded host.
+  const allowedOrigins = new Set([new URL(request.url).origin, 'https://lemarknewlend.netlify.app', origin]);
+  const ownPreview = source && /^https:\/\/[a-z0-9-]+--lemarknewlend\.netlify\.app$/.test(source);
+  if (source && !allowedOrigins.has(source) && !ownPreview) return new Response('Forbidden', {status:403});
   if (Number(request.headers.get('content-length') || 0) > 10_000_000) return error('Максимальный размер вложений — 10 МБ.');
   try {
     const bytes = await request.arrayBuffer();
