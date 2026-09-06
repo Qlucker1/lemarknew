@@ -1,0 +1,4 @@
+# Preserve fetched asset bytes so provenance hashes survive every platform.
+/public/assets/** -text -whitespace
+/public/vendor/** -text -whitespace
+/artifacts/original/home.html -text -whitespace

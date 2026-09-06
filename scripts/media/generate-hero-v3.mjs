@@ -1,0 +1,13 @@
+import { execFile } from 'node:child_process';
+import { promisify } from 'node:util';
+import { mkdir, writeFile } from 'node:fs/promises';
+const run = promisify(execFile);
+const root = new URL('../../public/media/lemark/v3/', import.meta.url);
+await mkdir(root, { recursive: true });
+const prompt = 'One continuous 10-second architectural material film, physically precise and photorealistic. Opening 0-3 seconds: extreme close-up of the straight dense dark edge of a thin high-pressure laminate panel, warm oak decorative face, grazing daylight, beautiful tactile material, controlled dolly sideways. At 3 seconds the panel passes close to lens as a natural full-frame occlusion wipe. 3-6 seconds: the same oak laminate sheet is now a beautifully finished slim tabletop in a luminous contemporary architectural interior, camera continues moving in exactly the same direction, elegant cream walls and shadow lines. At 6 seconds a vertical oak HPL partition passes close to camera making a second seamless physical occlusion wipe. 6-10 seconds: reveal an expansive refined public interior with oak HPL wall cladding, pale stone floor and huge sunlit windows, slow ease-out ending on a calm wide composition. Every transition motivated by real camera motion and foreground geometry. A coherent warm ivory, oak and graphite palette throughout. Precise flat surfaces, realistic 8mm laminate edge, beautiful architectural photography, no factories, no trains, no people, no floating or melting geometry, no text, no logos, no captions. Keep the important geometry in central 40 percent for a vertical crop. Keep left third of opening uncluttered for HTML headline. Restrained premium cinematography, no strobing, no rapid cuts. Silent.';
+const manifest = { version:3, createdAt:new Date().toISOString(), model:'seedance_2_0', prompt, parameters:{duration:10,resolution:'1080p',aspect_ratio:'16:9',generate_audio:false}, jobs:[] };
+await writeFile(new URL('generation.json',root), JSON.stringify(manifest,null,2));
+const cli = process.platform === 'win32' ? `${process.env.APPDATA}/npm/node_modules/@higgsfield/cli/bin/higgsfield.js` : null;
+const {stdout} = await run(cli ? process.execPath : 'higgsfield', [...(cli ? [cli] : []),'generate','create','seedance_2_0','--prompt',prompt,'--duration','10','--resolution','1080p','--aspect_ratio','16:9','--generate_audio','false','--wait','--wait-timeout','20m','--json'], {maxBuffer:10*1024*1024, timeout:1250000});
+await writeFile(new URL('generation-result.json',root),stdout);
+console.log(stdout);

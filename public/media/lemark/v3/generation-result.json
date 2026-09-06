@@ -1,0 +1,30 @@
+[
+  {
+    "id": "13f07e5a-c962-4b20-b33b-0a8528cfb9f2",
+    "status": "completed",
+    "display_name": "Seedance 2.0",
+    "job_set_type": "seedance_2_0",
+    "result_url": "https://d8j0ntlcm91z4.cloudfront.net/user_2zaigKgp0Hi6Pb5NUV1EasSYVJ3/hf_20260905_130034_13f07e5a-c962-4b20-b33b-0a8528cfb9f2.mp4",
+    "created_at": 1788613234.263374,
+    "params": {
+      "width": 1920,
+      "height": 1080,
+      "prompt": "One continuous 10-second architectural material film, physically precise and photorealistic. Opening 0-3 seconds: extreme close-up of the straight dense dark edge of a thin high-pressure laminate panel, warm oak decorative face, grazing daylight, beautiful tactile material, controlled dolly sideways. At 3 seconds the panel passes close to lens as a natural full-frame occlusion wipe. 3-6 seconds: the same oak laminate sheet is now a beautifully finished slim tabletop in a luminous contemporary architectural interior, camera continues moving in exactly the same direction, elegant cream walls and shadow lines. At 6 seconds a vertical oak HPL partition passes close to camera making a second seamless physical occlusion wipe. 6-10 seconds: reveal an expansive refined public interior with oak HPL wall cladding, pale stone floor and huge sunlit windows, slow ease-out ending on a calm wide composition. Every transition motivated by real camera motion and foreground geometry. A coherent warm ivory, oak and graphite palette throughout. Precise flat surfaces, realistic 8mm laminate edge, beautiful architectural photography, no factories, no trains, no people, no floating or melting geometry, no text, no logos, no captions. Keep the important geometry in central 40 percent for a vertical crop. Keep left third of opening uncluttered for HTML headline. Restrained premium cinematography, no strobing, no rapid cuts. Silent.",
+      "genre": "auto",
+      "medias": [],
+      "duration": 10,
+      "resolution": "1080p",
+      "aspect_ratio": "16:9",
+      "generate_audio": false,
+      "multi_shots": false,
+      "multi_shot_mode": "custom",
+      "multi_prompt": [],
+      "speedramp": "auto",
+      "reference_elements": [],
+      "prompt_language": "en",
+      "mode": "std",
+      "model": "seedance_2_0",
+      "bitrate_mode": "standard"
+    }
+  }
+]

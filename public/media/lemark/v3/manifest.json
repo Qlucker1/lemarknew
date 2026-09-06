@@ -1,0 +1,132 @@
+{
+  "version": 3,
+  "createdAt": "2026-09-05T13:00:33.389Z",
+  "model": "seedance_2_0",
+  "prompt": "One continuous 10-second architectural material film, physically precise and photorealistic. Opening 0-3 seconds: extreme close-up of the straight dense dark edge of a thin high-pressure laminate panel, warm oak decorative face, grazing daylight, beautiful tactile material, controlled dolly sideways. At 3 seconds the panel passes close to lens as a natural full-frame occlusion wipe. 3-6 seconds: the same oak laminate sheet is now a beautifully finished slim tabletop in a luminous contemporary architectural interior, camera continues moving in exactly the same direction, elegant cream walls and shadow lines. At 6 seconds a vertical oak HPL partition passes close to camera making a second seamless physical occlusion wipe. 6-10 seconds: reveal an expansive refined public interior with oak HPL wall cladding, pale stone floor and huge sunlit windows, slow ease-out ending on a calm wide composition. Every transition motivated by real camera motion and foreground geometry. A coherent warm ivory, oak and graphite palette throughout. Precise flat surfaces, realistic 8mm laminate edge, beautiful architectural photography, no factories, no trains, no people, no floating or melting geometry, no text, no logos, no captions. Keep the important geometry in central 40 percent for a vertical crop. Keep left third of opening uncluttered for HTML headline. Restrained premium cinematography, no strobing, no rapid cuts. Silent.",
+  "parameters": {
+    "duration": 10,
+    "resolution": "1080p",
+    "aspect_ratio": "16:9",
+    "generate_audio": false
+  },
+  "jobs": [
+    {
+      "id": "13f07e5a-c962-4b20-b33b-0a8528cfb9f2",
+      "status": "completed",
+      "display_name": "Seedance 2.0",
+      "job_set_type": "seedance_2_0",
+      "result_url": "https://d8j0ntlcm91z4.cloudfront.net/user_2zaigKgp0Hi6Pb5NUV1EasSYVJ3/hf_20260905_130034_13f07e5a-c962-4b20-b33b-0a8528cfb9f2.mp4",
+      "created_at": 1788613234.263374,
+      "params": {
+        "width": 1920,
+        "height": 1080,
+        "prompt": "One continuous 10-second architectural material film, physically precise and photorealistic. Opening 0-3 seconds: extreme close-up of the straight dense dark edge of a thin high-pressure laminate panel, warm oak decorative face, grazing daylight, beautiful tactile material, controlled dolly sideways. At 3 seconds the panel passes close to lens as a natural full-frame occlusion wipe. 3-6 seconds: the same oak laminate sheet is now a beautifully finished slim tabletop in a luminous contemporary architectural interior, camera continues moving in exactly the same direction, elegant cream walls and shadow lines. At 6 seconds a vertical oak HPL partition passes close to camera making a second seamless physical occlusion wipe. 6-10 seconds: reveal an expansive refined public interior with oak HPL wall cladding, pale stone floor and huge sunlit windows, slow ease-out ending on a calm wide composition. Every transition motivated by real camera motion and foreground geometry. A coherent warm ivory, oak and graphite palette throughout. Precise flat surfaces, realistic 8mm laminate edge, beautiful architectural photography, no factories, no trains, no people, no floating or melting geometry, no text, no logos, no captions. Keep the important geometry in central 40 percent for a vertical crop. Keep left third of opening uncluttered for HTML headline. Restrained premium cinematography, no strobing, no rapid cuts. Silent.",
+        "genre": "auto",
+        "medias": [],
+        "duration": 10,
+        "resolution": "1080p",
+        "aspect_ratio": "16:9",
+        "generate_audio": false,
+        "multi_shots": false,
+        "multi_shot_mode": "custom",
+        "multi_prompt": [],
+        "speedramp": "auto",
+        "reference_elements": [],
+        "prompt_language": "en",
+        "mode": "std",
+        "model": "seedance_2_0",
+        "bitrate_mode": "standard"
+      }
+    }
+  ],
+  "outputs": [
+    {
+      "path": "/media/lemark/v3/source.mp4",
+      "bytes": 7294963,
+      "sha256": "c17caa6cea53960877b3b5e3e55fda1d6f6af2bdbe4a042635bb95d57f46e614"
+    },
+    {
+      "path": "/media/lemark/v3/desktop.mp4",
+      "bytes": 1064239,
+      "sha256": "7f616620a72a62dc5ba83edf8b5b0ab9296259f7caeb5d9c5a7d7ff938d0c187",
+      "ffmpegArgs": [
+        "-y",
+        "-i",
+        "public/media/lemark/v3/source.mp4",
+        "-an",
+        "-t",
+        "10",
+        "-c:v",
+        "libx264",
+        "-preset",
+        "slow",
+        "-pix_fmt",
+        "yuv420p",
+        "-g",
+        "4",
+        "-keyint_min",
+        "4",
+        "-sc_threshold",
+        "0",
+        "-bf",
+        "0",
+        "-movflags",
+        "+faststart",
+        "-vf",
+        "scale=1280:-2,fps=24",
+        "-crf",
+        "26",
+        "public/media/lemark/v3/desktop.mp4"
+      ]
+    },
+    {
+      "path": "/media/lemark/v3/mobile.mp4",
+      "bytes": 524303,
+      "sha256": "8fe027a5beaacfa70d9cf380b1ac595d8a2bc99503272243ab3612a17bfba252",
+      "ffmpegArgs": [
+        "-y",
+        "-i",
+        "public/media/lemark/v3/source.mp4",
+        "-an",
+        "-t",
+        "10",
+        "-c:v",
+        "libx264",
+        "-preset",
+        "slow",
+        "-pix_fmt",
+        "yuv420p",
+        "-g",
+        "4",
+        "-keyint_min",
+        "4",
+        "-sc_threshold",
+        "0",
+        "-bf",
+        "0",
+        "-movflags",
+        "+faststart",
+        "-vf",
+        "scale=-2:960,crop=540:960,fps=24",
+        "-crf",
+        "27",
+        "public/media/lemark/v3/mobile.mp4"
+      ]
+    },
+    {
+      "path": "/media/lemark/v3/poster-desktop.jpg",
+      "bytes": 21147,
+      "sha256": "9cfb025718f6e7f49fc79ad670bce9b34237f169dff0205edc0454e1f4bf0de5"
+    },
+    {
+      "path": "/media/lemark/v3/poster-mobile.jpg",
+      "bytes": 9699,
+      "sha256": "809a62636f31f8cafc34b7a8c2232032f77432fe3da8422e3cef179f6f837e1f"
+    },
+    {
+      "path": "/media/lemark/v3/contact-sheet.jpg",
+      "bytes": 46561,
+      "sha256": "7b4965eafb6c091f12df9226c950bb9f893365af946af3768c489dcb2e70ad32"
+    }
+  ]
+}

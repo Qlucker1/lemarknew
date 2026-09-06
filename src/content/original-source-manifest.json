@@ -1,0 +1,705 @@
+{
+  "source": "https://lemarkllc.ru/",
+  "fetchedAt": "2026-09-06T09:51:43.118Z",
+  "originalSha256": "5f6140d19862c5a192c262e6c4ed29f267d0f2baa9e53ee7a3ae5c846b997c89",
+  "lowerMarkupSha256": "21e2c866890cb8ed4c0fb8b2d0765aa201ebcc600d303bb6193e6cd562428992",
+  "resources": [
+    {
+      "url": "https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js",
+      "path": "/vendor/cdn.jsdelivr.net/slick.min.js",
+      "bytes": 42863,
+      "sha256": "0c7178cc6ca34fb18e30f070a5e7a1c287b2d7ccfcba2cfdf06e0f46eda55740"
+    },
+    {
+      "url": "https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js",
+      "path": "/vendor/cdnjs.cloudflare.com/jquery.fancybox.min.js",
+      "bytes": 68253,
+      "sha256": "cadda460ccb4c3c01bb45f3d5976f63f5adf8dc3ff1d31cb4fbd3ded4f18e5bf"
+    },
+    {
+      "url": "https://lemarkllc.ru/assets/templates/click_handler.js",
+      "path": "/assets/templates/click_handler.js",
+      "bytes": 5258,
+      "sha256": "d5dc1ecc2b3fdaf590fe6a0d58ab69b57d1a69a26e0e3bc2dec7d5ca79b05ed3"
+    },
+    {
+      "url": "https://lemarkllc.ru/assets/templates/assets/images/pages/main/2/sheet_1.webp",
+      "path": "/assets/templates/assets/images/pages/main/2/sheet_1.webp",
+      "bytes": 14074,
+      "sha256": "713ee8ba0e9786b3886a9c4041ec8cabd22cf9af4ab2797f99a0d3a5a08dfbb4"
+    },
+    {
+      "url": "https://lemarkllc.ru/assets/templates/assets/images/pages/main/2/sheet_3.webp",
+      "path": "/assets/templates/assets/images/pages/main/2/sheet_3.webp",
+      "bytes": 13506,
+      "sha256": "82409eee7f5b7a502779f1bc4e57a48df962247a72c22b90953881afb42d6c70"
+    },
+    {
+      "url": "https://lemarkllc.ru/assets/templates/assets/images/pages/main/2/sheet_4.webp",
+      "path": "/assets/templates/assets/images/pages/main/2/sheet_4.webp",
+      "bytes": 23832,
+      "sha256": "4fe5f5c34b06e4994131c7738b0abb7317b3a361d3f58e9e81251d759292f462"
+    },
+    {
+      "url": "https://lemarkllc.ru/assets/templates/assets/images/pages/main/2/sheet_2.webp",
+      "path": "/assets/templates/assets/images/pages/main/2/sheet_2.webp",
+      "bytes": 59076,
+      "sha256": "013d868e55240516a5124b7464fb5619f934d9dd20576114811b921e9fabb329"
+    },
+    {
+      "url": "https://lemarkllc.ru/assets/templates/assets/images/pages/main/2/sheet_1.png",
+      "path": "/assets/templates/assets/images/pages/main/2/sheet_1.png",
+      "bytes": 67080,
+      "sha256": "fd7c0739b0897422bf3a6b6c6ba9fc0957f64ec73cd6087927976b38517d4ed4"
+    },
+    {
+      "url": "https://lemarkllc.ru/assets/templates/assets/images/pages/main/2/sheet_3.png",
+      "path": "/assets/templates/assets/images/pages/main/2/sheet_3.png",
+      "bytes": 86580,
+      "sha256": "e8ea2fca43126d66d814e2f3acaa87203ba2b54b936514bfecd0931a0d6fbc8f"
+    },
+    {
+      "url": "https://lemarkllc.ru/assets/templates/assets/images/pages/main/2/sheet_2.png",
+      "path": "/assets/templates/assets/images/pages/main/2/sheet_2.png",
+      "bytes": 329147,
+      "sha256": "5b36512f5881337781f3e749ad61b6709ed7d10ed9200bcd53952b7b36f41fad"
+    },
+    {
+      "url": "https://lemarkllc.ru/assets/templates/assets/images/pages/main/2/sheet_5.webp",
+      "path": "/assets/templates/assets/images/pages/main/2/sheet_5.webp",
+      "bytes": 13394,
+      "sha256": "3efcd1cbd6556a78c1f98e378b84562938596eb0a573bf798e1ebee49d566a68"
+    },
+    {
+      "url": "https://lemarkllc.ru/assets/templates/assets/images/pages/main/2/sheet_7.webp",
+      "path": "/assets/templates/assets/images/pages/main/2/sheet_7.webp",
+      "bytes": 14728,
+      "sha256": "765fdf402c330ec71af4f795def2cc73152e2947ffb2dc7869f8cc7fde84eecb"
+    },
+    {
+      "url": "https://lemarkllc.ru/assets/templates/assets/images/pages/main/2/sheet_7.png",
+      "path": "/assets/templates/assets/images/pages/main/2/sheet_7.png",
+      "bytes": 35245,
+      "sha256": "30e1ef2b340660579de0540d21cd64fa07b1c36403fb61ea317cf62617b2f333"
+    },
+    {
+      "url": "https://lemarkllc.ru/assets/templates/assets/images/pages/main/2/sheet_6.webp",
+      "path": "/assets/templates/assets/images/pages/main/2/sheet_6.webp",
+      "bytes": 38888,
+      "sha256": "e699e2e7f5ce6df262223ec8584db24dfe8b5deef067179b326077a169eaa106"
+    },
+    {
+      "url": "https://lemarkllc.ru/assets/files/pluses/1-1.mp4",
+      "path": "/assets/files/pluses/1-1.mp4",
+      "bytes": 186966,
+      "sha256": "926b5d3d19dc44ba9b7c86e50127c0f87dd219bb5d32b4f34a6afc7f884f4eb9"
+    },
+    {
+      "url": "https://lemarkllc.ru/assets/templates/assets/images/pages/main/2/sheet_4.png",
+      "path": "/assets/templates/assets/images/pages/main/2/sheet_4.png",
+      "bytes": 264714,
+      "sha256": "2c5ebbfdc3a6172d075a9554c3b785219a8fad5a2f0d02cda3c34f8e8648feff"
+    },
+    {
+      "url": "https://lemarkllc.ru/assets/templates/assets/images/pages/main/2/sheet_5.png",
+      "path": "/assets/templates/assets/images/pages/main/2/sheet_5.png",
+      "bytes": 56087,
+      "sha256": "1782631de7e311e7ee163671f9d7973ad2c576edb9bd468b58f86c1b229a0423"
+    },
+    {
+      "url": "https://lemarkllc.ru/assets/templates/assets/images/pages/main/2/sheet_6.png",
+      "path": "/assets/templates/assets/images/pages/main/2/sheet_6.png",
+      "bytes": 230304,
+      "sha256": "c688dcf49dfd531893d674c802ea80f454ca852f32dd1ccea7a18cbac9cb3a4a"
+    },
+    {
+      "url": "https://lemarkllc.ru/assets/cache_image/pluses/4-1_446x442_c5a.jpg",
+      "path": "/assets/cache_image/pluses/4-1_446x442_c5a.jpg",
+      "bytes": 21476,
+      "sha256": "8e16b314b05905f512e0f9fdb6e71573e05386e595ecf5adde0dedbeb7a29b6b"
+    },
+    {
+      "url": "https://lemarkllc.ru/assets/cache_image/pluses/2-2_506x602_fbd.webp",
+      "path": "/assets/cache_image/pluses/2-2_506x602_fbd.webp",
+      "bytes": 30136,
+      "sha256": "d15d1835863a0191eb2057bfdea6393289df8391f3be2b2a4ca36e2ed38db553"
+    },
+    {
+      "url": "https://lemarkllc.ru/assets/cache_image/pluses/2-1_446x442_c5a.jpg",
+      "path": "/assets/cache_image/pluses/2-1_446x442_c5a.jpg",
+      "bytes": 24208,
+      "sha256": "421081a8976be282e348074f24f626b336e25d141393ab2283c5528ea2b25182"
+    },
+    {
+      "url": "https://lemarkllc.ru/assets/cache_image/pluses/4-1_446x442_e67.webp",
+      "path": "/assets/cache_image/pluses/4-1_446x442_e67.webp",
+      "bytes": 95618,
+      "sha256": "1eeaa9b00465bed4bfb78b2415139a8307f093c39dc584a41e8bf0f2482317b9"
+    },
+    {
+      "url": "https://lemarkllc.ru/assets/cache_image/pluses/2-1_446x442_e67.webp",
+      "path": "/assets/cache_image/pluses/2-1_446x442_e67.webp",
+      "bytes": 104554,
+      "sha256": "c68c762bf02786fa96e2ea5d4d949db9c1f9d50a5866ebffc36d445792f98576"
+    },
+    {
+      "url": "https://lemarkllc.ru/assets/cache_image/pluses/lemark_hpl_proizvodstvo_506x602_fbd.webp",
+      "path": "/assets/cache_image/pluses/lemark_hpl_proizvodstvo_506x602_fbd.webp",
+      "bytes": 101414,
+      "sha256": "a1418693117c44a2ec3470e1b99c055bf6ab4d6140b9ab290a7b5fffef88cfe2"
+    },
+    {
+      "url": "https://lemarkllc.ru/assets/files/pluses/3-1.mp4",
+      "path": "/assets/files/pluses/3-1.mp4",
+      "bytes": 441171,
+      "sha256": "9dd66fdfe55615d0485ed529633a79305045cf7b5e34e104240773b739693e13"
+    },
+    {
+      "url": "https://lemarkllc.ru/assets/cache_image/pluses/3-2_506x602_fbd.webp",
+      "path": "/assets/cache_image/pluses/3-2_506x602_fbd.webp",
+      "bytes": 42882,
+      "sha256": "f7a5b0f0987bd14c6e65cc4e59c3657a6f37cb04d3ee7fb4b4349b1b1391b26d"
+    },
+    {
+      "url": "https://lemarkllc.ru/assets/cache_image/pluses/5-1_446x442_c5a.jpg",
+      "path": "/assets/cache_image/pluses/5-1_446x442_c5a.jpg",
+      "bytes": 19123,
+      "sha256": "1aa69cd19b9a00ea1d9e598835d18aa83011823bf60eee675940c1d2d7203f60"
+    },
+    {
+      "url": "https://lemarkllc.ru/assets/cache_image/pluses/4-2_506x602_fbd.webp",
+      "path": "/assets/cache_image/pluses/4-2_506x602_fbd.webp",
+      "bytes": 17776,
+      "sha256": "3c9b1d7bbff9e9d26f65406968dd29f8cfb90797f1530cc90b059b85486170e5"
+    },
+    {
+      "url": "https://lemarkllc.ru/assets/cache_image/pluses/5-2_506x602_fbd.webp",
+      "path": "/assets/cache_image/pluses/5-2_506x602_fbd.webp",
+      "bytes": 12292,
+      "sha256": "e34a45463bc694891465006db5fe806c4b8821d1dca5ffe1855b24753163bf59"
+    },
+    {
+      "url": "https://lemarkllc.ru/assets/cache_image/pluses/6-1_446x442_e67.webp",
+      "path": "/assets/cache_image/pluses/6-1_446x442_e67.webp",
+      "bytes": 100688,
+      "sha256": "edd745c16b21c4633ca0cac4225c554d742a8b4faae198d97abb1335f751bd0f"
+    },
+    {
+      "url": "https://lemarkllc.ru/assets/cache_image/pluses/5-1_446x442_e67.webp",
+      "path": "/assets/cache_image/pluses/5-1_446x442_e67.webp",
+      "bytes": 86480,
+      "sha256": "7b067da64f220d76d954155b88c085c323e55b2a4f221f83d5718c3f25f2164b"
+    },
+    {
+      "url": "https://lemarkllc.ru/assets/cache_image/pluses/7-1_446x442_e67.webp",
+      "path": "/assets/cache_image/pluses/7-1_446x442_e67.webp",
+      "bytes": 130292,
+      "sha256": "66646be4e349347718a3e17902f00b5cb464da499c25aa9ac5bbef29dac2f9dd"
+    },
+    {
+      "url": "https://lemarkllc.ru/assets/cache_image/pluses/6-1_446x442_c5a.jpg",
+      "path": "/assets/cache_image/pluses/6-1_446x442_c5a.jpg",
+      "bytes": 19682,
+      "sha256": "a576ff995a4463e7e91fbfbba29b194f5e5463e093d5d0350317dc67af140a56"
+    },
+    {
+      "url": "https://lemarkllc.ru/assets/cache_image/pluses/6-2_506x602_fbd.webp",
+      "path": "/assets/cache_image/pluses/6-2_506x602_fbd.webp",
+      "bytes": 22018,
+      "sha256": "6cfb128b0583457c715a1803b3cb5b966678887a4169a43afa3c5c40327fee55"
+    },
+    {
+      "url": "https://lemarkllc.ru/assets/cache_image/manufacture/3_599x353_348.webp",
+      "path": "/assets/cache_image/manufacture/3_599x353_348.webp",
+      "bytes": 24160,
+      "sha256": "0850f595a2ef24b7812ff930c9f8fc1713d736c523c4229a007665af7c75d71a"
+    },
+    {
+      "url": "https://lemarkllc.ru/assets/cache_image/manufacture/2_599x353_348.webp",
+      "path": "/assets/cache_image/manufacture/2_599x353_348.webp",
+      "bytes": 21480,
+      "sha256": "0a4c87cbd4f6c52ecab05cf5bed033ecd4458c80e1ee643f3e863d5823bff576"
+    },
+    {
+      "url": "https://lemarkllc.ru/assets/cache_image/pluses/7-1_446x442_c5a.jpg",
+      "path": "/assets/cache_image/pluses/7-1_446x442_c5a.jpg",
+      "bytes": 34250,
+      "sha256": "473f5112b24b227ddb94b29877fb24f0aa220240687e5a3f9f226d1ce5a2965e"
+    },
+    {
+      "url": "https://lemarkllc.ru/assets/cache_image/manufacture/dbsp-hpl-lemark-hpl_599x353_348.webp",
+      "path": "/assets/cache_image/manufacture/dbsp-hpl-lemark-hpl_599x353_348.webp",
+      "bytes": 51890,
+      "sha256": "df74c39ef712a416abf271c7bbd257173f6558f7532f6f78e88d790b9cd0bc68"
+    },
+    {
+      "url": "https://lemarkllc.ru/assets/cache_image/manufacture/dbsp-hpl_599x353_348.webp",
+      "path": "/assets/cache_image/manufacture/dbsp-hpl_599x353_348.webp",
+      "bytes": 77376,
+      "sha256": "ffd42a758a58822c16412ca0b155caada67c3bcac74083a102a69d6f17c881bc"
+    },
+    {
+      "url": "https://lemarkllc.ru/assets/cache_image/pluses/noimage_506x602_3c3_506x602_fbd.webp",
+      "path": "/assets/cache_image/pluses/noimage_506x602_3c3_506x602_fbd.webp",
+      "bytes": 121018,
+      "sha256": "3cd68941df7aa1205ffd8c401eff2e3395ba7e8bd7eaade41b9abbc9a0cd8f71"
+    },
+    {
+      "url": "https://lemarkllc.ru/assets/cache_image/manufacture/1_599x353_348.webp",
+      "path": "/assets/cache_image/manufacture/1_599x353_348.webp",
+      "bytes": 20994,
+      "sha256": "16bdce7534a7c4b4614d1f240029cde20fb384a88fc0bf95d8808fe10c62bb81"
+    },
+    {
+      "url": "https://lemarkllc.ru/assets/cache_image/manufacture/dbsp-hpl-lemark_599x353_348.webp",
+      "path": "/assets/cache_image/manufacture/dbsp-hpl-lemark_599x353_348.webp",
+      "bytes": 58866,
+      "sha256": "fd9b3692fa091be84d74220f59543f1d293719e40b956584e9362e960b7d6226"
+    },
+    {
+      "url": "https://lemarkllc.ru/assets/cache_image/partners/4_200x200_12a.webp",
+      "path": "/assets/cache_image/partners/4_200x200_12a.webp",
+      "bytes": 3470,
+      "sha256": "b4f62fad044c4d49aba0849e532e744cf6e529f6844ed9da277d89572fc15445"
+    },
+    {
+      "url": "https://lemarkllc.ru/assets/cache_image/partners/8_200x200_12a.webp",
+      "path": "/assets/cache_image/partners/8_200x200_12a.webp",
+      "bytes": 4314,
+      "sha256": "1b858820e8c4e4f4ec555118096cc419e965eae632a8dbb696173e644ef49ef8"
+    },
+    {
+      "url": "https://lemarkllc.ru/assets/cache_image/partners/1_200x200_12a.webp",
+      "path": "/assets/cache_image/partners/1_200x200_12a.webp",
+      "bytes": 3534,
+      "sha256": "ac24e6668a008959bd2cddd69acd266fa813fba545f8c8c3099c08d1a7c00b8f"
+    },
+    {
+      "url": "https://lemarkllc.ru/assets/cache_image/partners/7_200x200_12a.webp",
+      "path": "/assets/cache_image/partners/7_200x200_12a.webp",
+      "bytes": 2662,
+      "sha256": "b43cd34021a250630a44c6e6d950377fcfa449c73c3d6055c84857cc26cbedf1"
+    },
+    {
+      "url": "https://lemarkllc.ru/assets/cache_image/partners/5_200x200_12a.webp",
+      "path": "/assets/cache_image/partners/5_200x200_12a.webp",
+      "bytes": 4506,
+      "sha256": "aaf35cb2f5c18bb79d677ba1862c373c3a6274f6115300b604097e9148766352"
+    },
+    {
+      "url": "https://lemarkllc.ru/assets/cache_image/partners/2_200x200_12a.webp",
+      "path": "/assets/cache_image/partners/2_200x200_12a.webp",
+      "bytes": 3720,
+      "sha256": "07ebfdc7a5dbdf6d34c306ec53c1f932aa199b3efeb584a804b3c0e143cbf992"
+    },
+    {
+      "url": "https://lemarkllc.ru/assets/cache_image/partners/3_200x200_12a.webp",
+      "path": "/assets/cache_image/partners/3_200x200_12a.webp",
+      "bytes": 3178,
+      "sha256": "eaeada3546282432ad6fbb3cef0c6faa2c8b46a069e4116fa4883241e5689e23"
+    },
+    {
+      "url": "https://lemarkllc.ru/assets/cache_image/manufacture/zavod-sloistyix-plastikov_599x353_348.webp",
+      "path": "/assets/cache_image/manufacture/zavod-sloistyix-plastikov_599x353_348.webp",
+      "bytes": 72646,
+      "sha256": "27c41fe71e49db5007236eb414a7bafb114fccea18f3c207a076463ce9cea524"
+    },
+    {
+      "url": "https://lemarkllc.ru/assets/cache_image/partners/10_200x200_12a.webp",
+      "path": "/assets/cache_image/partners/10_200x200_12a.webp",
+      "bytes": 5068,
+      "sha256": "6709f24f8eae16f2a5fc1839e299e911c4ed4b51477c7751bcaecbbd7bf91bcb"
+    },
+    {
+      "url": "https://lemarkllc.ru/assets/cache_image/partners/15_200x200_12a.webp",
+      "path": "/assets/cache_image/partners/15_200x200_12a.webp",
+      "bytes": 4956,
+      "sha256": "14aebcff15ebe4dfc3dd470502d571e081590b1f29ba9fdfa2432f97759b5856"
+    },
+    {
+      "url": "https://lemarkllc.ru/assets/cache_image/partners/11_200x200_12a.webp",
+      "path": "/assets/cache_image/partners/11_200x200_12a.webp",
+      "bytes": 1788,
+      "sha256": "8417d36c0df42c837b9dfb417c5fee141ce0ae2d0687bff9e88e387fc8f51286"
+    },
+    {
+      "url": "https://lemarkllc.ru/assets/cache_image/partners/12_200x200_12a.webp",
+      "path": "/assets/cache_image/partners/12_200x200_12a.webp",
+      "bytes": 4844,
+      "sha256": "f21270e992301f35ee69acede95501b799b680770aaf70f8828f18354074ff72"
+    },
+    {
+      "url": "https://lemarkllc.ru/assets/cache_image/partners/13_200x200_12a.webp",
+      "path": "/assets/cache_image/partners/13_200x200_12a.webp",
+      "bytes": 4874,
+      "sha256": "aa5e0e457532f411d1751c895c9350ed2be62956e04a60f5bcdcb86698971461"
+    },
+    {
+      "url": "https://lemarkllc.ru/assets/cache_image/partners/9_200x200_12a.webp",
+      "path": "/assets/cache_image/partners/9_200x200_12a.webp",
+      "bytes": 2850,
+      "sha256": "53d55555a45f9e4e5b382d186824b1dc2691affc46ee2330605cda54e73f601e"
+    },
+    {
+      "url": "https://lemarkllc.ru/assets/cache_image/partners/14_200x200_12a.webp",
+      "path": "/assets/cache_image/partners/14_200x200_12a.webp",
+      "bytes": 4092,
+      "sha256": "dfe933a5eddf8a61f25c32541c522bf12cde34a1ac401942f42db63a33ad7c14"
+    },
+    {
+      "url": "https://lemarkllc.ru/assets/cache_image/partners/16_200x200_12a.webp",
+      "path": "/assets/cache_image/partners/16_200x200_12a.webp",
+      "bytes": 5610,
+      "sha256": "8ade7138a6a89ad6b4692f826246a58b7f6ac51a0be36ca07ebf88c3541edd8c"
+    },
+    {
+      "url": "https://lemarkllc.ru/assets/cache_image/partners/tenre_200x200_12a.webp",
+      "path": "/assets/cache_image/partners/tenre_200x200_12a.webp",
+      "bytes": 1252,
+      "sha256": "bbff6efd1457ca6867fda7b51a990b7b19b5dbe97ed4caa3c22ec65e968df4dd"
+    },
+    {
+      "url": "https://lemarkllc.ru/assets/cache_image/partners/tmed_200x200_12a.webp",
+      "path": "/assets/cache_image/partners/tmed_200x200_12a.webp",
+      "bytes": 13006,
+      "sha256": "bcd7547eac3331658a7fee3cc076970c28ccf8445f5151a857d02f56812330f8"
+    },
+    {
+      "url": "https://lemarkllc.ru/assets/cache_image/partners/sechenova_200x200_12a.webp",
+      "path": "/assets/cache_image/partners/sechenova_200x200_12a.webp",
+      "bytes": 5840,
+      "sha256": "2ebc301bb8b70de61943690458b3364ec2803f03077337be100017eb26563c1f"
+    },
+    {
+      "url": "https://lemarkllc.ru/assets/cache_image/partners/simaz_200x200_12a.webp",
+      "path": "/assets/cache_image/partners/simaz_200x200_12a.webp",
+      "bytes": 1184,
+      "sha256": "d21d4fa6f7078801edd2740378d0f2a923194baa24973e439feae7ede61aff6d"
+    },
+    {
+      "url": "https://lemarkllc.ru/assets/cache_image/partners/rzhd_200x200_12a.webp",
+      "path": "/assets/cache_image/partners/rzhd_200x200_12a.webp",
+      "bytes": 2370,
+      "sha256": "4988eb3bf4c64f9fcbdf9e6b1b101b4789adfd154883bf5b38554b9061197cb4"
+    },
+    {
+      "url": "https://lemarkllc.ru/assets/cache_image/partners/bio_200x200_12a.webp",
+      "path": "/assets/cache_image/partners/bio_200x200_12a.webp",
+      "bytes": 9488,
+      "sha256": "621baf55147d51ec8d731419ece6c0dd0e4015ee7a9630fb93309803fad6c57e"
+    },
+    {
+      "url": "https://lemarkllc.ru/assets/cache_image/partners/sobranie_200x200_12a.webp",
+      "path": "/assets/cache_image/partners/sobranie_200x200_12a.webp",
+      "bytes": 2934,
+      "sha256": "abfa2117509c99121119e5df881954e28876f89b79050ec68ff32d7770e6d8e6"
+    },
+    {
+      "url": "https://lemarkllc.ru/assets/cache_image/partners/soyuz_200x200_12a.webp",
+      "path": "/assets/cache_image/partners/soyuz_200x200_12a.webp",
+      "bytes": 3352,
+      "sha256": "7c3dba5d33d33edb1e9da9ff079436f3f0bc4b7805d4ca43c4571678b49f8104"
+    },
+    {
+      "url": "https://lemarkllc.ru/assets/cache_image/partners/medcar_200x200_12a.webp",
+      "path": "/assets/cache_image/partners/medcar_200x200_12a.webp",
+      "bytes": 1226,
+      "sha256": "66bc0d6d15a06dbdde1af73aa7e82479cca930de155fafa72de9bc3b9b0bf78c"
+    },
+    {
+      "url": "https://lemarkllc.ru/assets/cache_image/partners/ditya_200x200_12a.webp",
+      "path": "/assets/cache_image/partners/ditya_200x200_12a.webp",
+      "bytes": 4826,
+      "sha256": "915e90999649c4940a4690ea0438ff0ba6f2e23631e66129e26eec3f47f3ca44"
+    },
+    {
+      "url": "https://lemarkllc.ru/assets/cache_image/partners/1172_200x200_12a.webp",
+      "path": "/assets/cache_image/partners/1172_200x200_12a.webp",
+      "bytes": 6684,
+      "sha256": "619daadd535c1b85e6d3658549ae0398429a78e4ca3fe31e90e786deecd3bc5d"
+    },
+    {
+      "url": "https://lemarkllc.ru/assets/cache_image/partners/kamaz_200x200_12a.webp",
+      "path": "/assets/cache_image/partners/kamaz_200x200_12a.webp",
+      "bytes": 5354,
+      "sha256": "978e7de783c7f11a77c3e266d828b806b9e4dcc63aeaf46ac41eeed2483776d8"
+    },
+    {
+      "url": "https://lemarkllc.ru/assets/cache_image/partners/paz_200x200_12a.webp",
+      "path": "/assets/cache_image/partners/paz_200x200_12a.webp",
+      "bytes": 4346,
+      "sha256": "207ade59a90abdacc549747857480cfe516c27a66e8cfb90c5fc8b914310d4d2"
+    },
+    {
+      "url": "https://lemarkllc.ru/assets/cache_image/partners/miratorg_200x200_12a.webp",
+      "path": "/assets/cache_image/partners/miratorg_200x200_12a.webp",
+      "bytes": 716,
+      "sha256": "80ae3206e2a7dfffe02b550400f9a1309a5745d6dd3502aa77daba475311c591"
+    },
+    {
+      "url": "https://lemarkllc.ru/assets/cache_image/partners/irvvin_200x200_12a.webp",
+      "path": "/assets/cache_image/partners/irvvin_200x200_12a.webp",
+      "bytes": 4908,
+      "sha256": "7c3bf7f6aa76af1a03d95decc834657f12032a79e5e607909051a38d885ed4bd"
+    },
+    {
+      "url": "https://lemarkllc.ru/assets/cache_image/partners/kedr_200x200_12a.webp",
+      "path": "/assets/cache_image/partners/kedr_200x200_12a.webp",
+      "bytes": 6462,
+      "sha256": "b6b4a638bd3e5719222353d3dd23fa76a22da05b25b5cbd6e4df5d12f062ffc8"
+    },
+    {
+      "url": "https://lemarkllc.ru/assets/templates/assets/images/common/black_logo.svg",
+      "path": "/assets/templates/assets/images/common/black_logo.svg",
+      "bytes": 27898,
+      "sha256": "4286e78a36f44f85789a800ec200670922a5c15a8a59795b4de2cf1440d8ccb7"
+    },
+    {
+      "url": "https://lemarkllc.ru/assets/cache_image/partners/hpl-dekor-plastik_200x200_12a.webp",
+      "path": "/assets/cache_image/partners/hpl-dekor-plastik_200x200_12a.webp",
+      "bytes": 3222,
+      "sha256": "265d649c40ba60420203fd767475366f4fa66ac6174534f13a1eef9b999f3e0c"
+    },
+    {
+      "url": "https://lemarkllc.ru/assets/cache_image/partners/pre_200x200_12a.webp",
+      "path": "/assets/cache_image/partners/pre_200x200_12a.webp",
+      "bytes": 7208,
+      "sha256": "422937479aa027f44fa4d2c56344d2e39480ffb7c306a04678402759b48eea1d"
+    },
+    {
+      "url": "https://lemarkllc.ru/assets/templates/assets/images/common/white_logo.svg",
+      "path": "/assets/templates/assets/images/common/white_logo.svg",
+      "bytes": 27922,
+      "sha256": "4ccd38e32a458912d983209dad40fb8e114bd02723b0124eded5b0959f105441"
+    },
+    {
+      "url": "https://lemarkllc.ru/assets/cache_image/partners/mi_200x200_12a.webp",
+      "path": "/assets/cache_image/partners/mi_200x200_12a.webp",
+      "bytes": 8228,
+      "sha256": "59a508ffc54283637d06aa0f2ab44bfa190d5e6e24dced8a145612dde46b1039"
+    },
+    {
+      "url": "https://lemarkllc.ru/assets/cache_image/pluses/4-1_298x367_e2b.jpg",
+      "path": "/assets/cache_image/pluses/4-1_298x367_e2b.jpg",
+      "bytes": 27464,
+      "sha256": "1dd6c481481a334a488dfa898214926556b2148ea95bf6dd99d8e58c2988bea9"
+    },
+    {
+      "url": "https://lemarkllc.ru/assets/cache_image/partners/biocad_200x200_12a.webp",
+      "path": "/assets/cache_image/partners/biocad_200x200_12a.webp",
+      "bytes": 8192,
+      "sha256": "31d9b165bc123aa181acc97783fd5fd2514f6222ab3f1e5465b7ecd2a5295405"
+    },
+    {
+      "url": "https://lemarkllc.ru/assets/cache_image/partners/nefaz_200x200_12a.webp",
+      "path": "/assets/cache_image/partners/nefaz_200x200_12a.webp",
+      "bytes": 2624,
+      "sha256": "a75f61a48fb950a92a8cab1659af72887d78357868a8ba1bccdae9af9ebf29d9"
+    },
+    {
+      "url": "https://lemarkllc.ru/assets/cache_image/noimage_298x367_e2b.jpg",
+      "path": "/assets/cache_image/noimage_298x367_e2b.jpg",
+      "bytes": 15306,
+      "sha256": "f6808696fc0c6b0d178c9535039c616d5d3ed832cc9caf084a82add9d9449a82"
+    },
+    {
+      "url": "https://lemarkllc.ru/assets/components/ajaxform/js/lib/jquery.form.min.js",
+      "path": "/assets/components/ajaxform/js/lib/jquery.form.min.js",
+      "bytes": 14723,
+      "sha256": "dec02000effb475b67302569444c69f36700bdaad525f95956a2ba3873361f6d"
+    },
+    {
+      "url": "https://lemarkllc.ru/assets/components/ajaxform/js/lib/jquery.jgrowl.min.js",
+      "path": "/assets/components/ajaxform/js/lib/jquery.jgrowl.min.js",
+      "bytes": 5490,
+      "sha256": "9fdc13189ace49bfcaf1cedffaec9e88aba48b26210730af49cd1893f270ac98"
+    },
+    {
+      "url": "https://lemarkllc.ru/assets/cache_image/popupMenu/kkk3_298x367_6cb.png",
+      "path": "/assets/cache_image/popupMenu/kkk3_298x367_6cb.png",
+      "bytes": 5826,
+      "sha256": "224bb8aa4291833ebd1fd8b4724759c6393a8a9c99da65abc21e1982043c2e5b"
+    },
+    {
+      "url": "https://lemarkllc.ru/assets/cache_image/popupMenu/pfleiderer_642x360_793.jpg",
+      "path": "/assets/cache_image/popupMenu/pfleiderer_642x360_793.jpg",
+      "bytes": 63766,
+      "sha256": "a81979ffdf027ce5c81dc107fc21c55409853abe22ef21188d8d651dc00d5220"
+    },
+    {
+      "url": "https://lemarkllc.ru/assets/cache_image/noimage_642x360_793.jpg",
+      "path": "/assets/cache_image/noimage_642x360_793.jpg",
+      "bytes": 25244,
+      "sha256": "d465d9f53595fc5fb53622ba35d69a7b6cd0cdbad4729528f7272dda909d0019"
+    },
+    {
+      "url": "https://lemarkllc.ru/assets/components/minifyx/cache/scripts_4fb0399834.js",
+      "path": "/assets/components/minifyx/cache/scripts_4fb0399834.js",
+      "bytes": 155341,
+      "sha256": "90df4f19391ee6b14ca708f939663bc4d91ede935c6083ebcfdb20a2550ed852"
+    },
+    {
+      "url": "https://lemarkllc.ru/assets/images/popupMenu/chatgpt-image-5-iyun.-2026-g.-14_39_46.png",
+      "path": "/assets/images/popupMenu/chatgpt-image-5-iyun.-2026-g.-14_39_46.png",
+      "bytes": 2200308,
+      "sha256": "de48a385a6880a3277d265c21c049b246b271587d70677385b9df503d696e931"
+    },
+    {
+      "url": "https://lemarkllc.ru/assets/components/ajaxform/css/default.css",
+      "path": "/assets/components/ajaxform/css/default.css",
+      "bytes": 669,
+      "sha256": "075885a2229f279784ac42352acc0aa1c0507d0915d55512c69dd569c4444d74"
+    },
+    {
+      "url": "https://lemarkllc.ru/assets/components/ajaxform/js/default.js",
+      "path": "/assets/components/ajaxform/js/default.js",
+      "bytes": 4892,
+      "sha256": "64c1f671dafa46fd0d72cc078e12f9702cff5105835fc0ff507c96ae30da25fd"
+    },
+    {
+      "url": "https://lemarkllc.ru/assets/components/minishop2/js/web/message_settings.js",
+      "path": "/assets/components/minishop2/js/web/message_settings.js",
+      "bytes": 1425,
+      "sha256": "2ba9aa475e4fdf735d9671359b846d01c8d17c9f25747235453ac7b2f9b3b50f"
+    },
+    {
+      "url": "https://lemarkllc.ru/assets/templates/add.css?cd3b2a157770b90a8ce4527768da103d",
+      "path": "/assets/templates/add.css",
+      "bytes": 11107,
+      "sha256": "ea0c65d37359e79350900ecd7f988914d66871a62de461f0804787becbdb721e"
+    },
+    {
+      "url": "https://lemarkllc.ru/assets/components/minishop2/js/web/lib/jquery.jgrowl.min.js",
+      "path": "/assets/components/minishop2/js/web/lib/jquery.jgrowl.min.js",
+      "bytes": 5491,
+      "sha256": "45118533e31429e161d03c51dd6f48bc963829f20504a7ea939ba63c2d79ca5c"
+    },
+    {
+      "url": "https://lemarkllc.ru/favicon.png",
+      "path": "/favicon.png",
+      "bytes": 17536,
+      "sha256": "65db6074fdbd5ef53456791aa5538c3695b1c0e2deea6c5fd70d1a91c7eae2b7"
+    },
+    {
+      "url": "https://lemarkllc.ru/assets/components/minishop2/js/web/default.min.js?v=d667606381",
+      "path": "/assets/components/minishop2/js/web/default.min.js",
+      "bytes": 11640,
+      "sha256": "0d44c462e8ff51bcba10971c2cf451775d98fe2c1660252292a23f7ea411fa90"
+    },
+    {
+      "url": "https://lemarkllc.ru/assets/templates/styles.css?932ccb409822808317dcd99677f7bae3",
+      "path": "/assets/templates/styles.css",
+      "bytes": 249564,
+      "sha256": "844f4490d376891b0805fd344c470e4958eace1125cd6444205870178679abf0"
+    },
+    {
+      "url": "https://lemarkllc.ru/img/prev.png",
+      "path": "/img/prev.png",
+      "bytes": 1389,
+      "sha256": "bc75ba2e69d3bd4d87f8b4894bc44237f2f6989fdcd08d58edcff61984dedf05"
+    },
+    {
+      "url": "https://lemarkllc.ru/img/prev-h.png",
+      "path": "/img/prev-h.png",
+      "bytes": 593,
+      "sha256": "4b3e28dc634869a047cde69c09081a6cf7349ed09fb7b34a5e07d066b463abc0"
+    },
+    {
+      "url": "https://lemarkllc.ru/assets/components/minishop2/css/web/lib/jquery.jgrowl.min.css",
+      "path": "/assets/components/minishop2/css/web/lib/jquery.jgrowl.min.css",
+      "bytes": 1712,
+      "sha256": "09a823265c6a6a4ae031f80a324bda4d94d9406170597e5fd482181cf6089523"
+    },
+    {
+      "url": "https://lemarkllc.ru/assets/components/ajaxform/css/lib/jquery.jgrowl.min.css",
+      "path": "/assets/components/ajaxform/css/lib/jquery.jgrowl.min.css",
+      "bytes": 1711,
+      "sha256": "ad118ef2963bf326fac31ad81d3aea7efd26a2c9027eafa4bfd18b09f13fd687"
+    },
+    {
+      "url": "https://lemarkllc.ru/img/next-h.png",
+      "path": "/img/next-h.png",
+      "bytes": 1370,
+      "sha256": "50bc46bdab5521b810f11583ca809331667253b2dbe75d8ff96872007296f8d7"
+    },
+    {
+      "url": "https://lemarkllc.ru/assets/components/minishop2/css/web/default.css?v=d667606381",
+      "path": "/assets/components/minishop2/css/web/default.css",
+      "bytes": 1552,
+      "sha256": "4cb166881a5aa593a6c1cb1f86e01d94552d02231f93037cfe00425d24b38ac2"
+    },
+    {
+      "url": "https://lemarkllc.ru/img/next.png",
+      "path": "/img/next.png",
+      "bytes": 613,
+      "sha256": "d8f1fe00efd0db4d31c7e4d419a0aa2442b5e8451eaa3e8ba13b2007fd42b890"
+    },
+    {
+      "url": "https://lemarkllc.ru/assets/templates/assets/fonts/VisueltPro/VisueltPro-Light.woff2",
+      "path": "/assets/templates/assets/fonts/VisueltPro/VisueltPro-Light.woff2",
+      "bytes": 54896,
+      "sha256": "5acffb49e1f2b1dc4040639dd694f54f427752d33ec351da2030463ec7389669"
+    },
+    {
+      "url": "https://lemarkllc.ru/assets/templates/assets/fonts/VisueltPro/VisueltPro-Bold.woff2",
+      "path": "/assets/templates/assets/fonts/VisueltPro/VisueltPro-Bold.woff2",
+      "bytes": 57240,
+      "sha256": "b63994f27d4ec20f1efdc466aac76f90cd32a0180770c579e05951ca13e82080"
+    },
+    {
+      "url": "https://lemarkllc.ru/assets/templates/assets/fonts/VisueltPro/VisueltPro-Regular.woff2",
+      "path": "/assets/templates/assets/fonts/VisueltPro/VisueltPro-Regular.woff2",
+      "bytes": 54916,
+      "sha256": "c74ccc2fc83af9aff61d0ee0f4ca1f33af135b3ce71463c146c7be684ad8aafe"
+    },
+    {
+      "url": "https://lemarkllc.ru/assets/templates/assets/fonts/VisueltPro/VisueltPro-Black.woff2",
+      "path": "/assets/templates/assets/fonts/VisueltPro/VisueltPro-Black.woff2",
+      "bytes": 56516,
+      "sha256": "82fb6a3bb98e7ba125f2ec68f7ee927c2f8156106e9813b2fe4c2ddce76c25e5"
+    },
+    {
+      "url": "https://lemarkllc.ru/assets/templates/assets/fonts/VisueltPro/VisueltPro-Medium.woff2",
+      "path": "/assets/templates/assets/fonts/VisueltPro/VisueltPro-Medium.woff2",
+      "bytes": 57100,
+      "sha256": "7de83989548106488c2815c5c446adbd9402ad58d2b9817a475d6f312e0c97c6"
+    },
+    {
+      "url": "https://lemarkllc.ru/assets/templates/assets/fonts/VisueltPro/VisueltPro-Light.woff",
+      "error": "Error: HTTP 404",
+      "fallback": "official-origin rewrite"
+    },
+    {
+      "url": "https://lemarkllc.ru/assets/templates/assets/fonts/VisueltPro/VisueltPro-Regular.woff",
+      "error": "Error: HTTP 404",
+      "fallback": "official-origin rewrite"
+    },
+    {
+      "url": "https://lemarkllc.ru/assets/templates/assets/fonts/VisueltPro/VisueltPro-Bold.woff",
+      "error": "Error: HTTP 404",
+      "fallback": "official-origin rewrite"
+    },
+    {
+      "url": "https://lemarkllc.ru/assets/templates/assets/fonts/VisueltPro/VisueltPro-Medium.woff",
+      "error": "Error: HTTP 404",
+      "fallback": "official-origin rewrite"
+    },
+    {
+      "url": "https://lemarkllc.ru/assets/templates/assets/fonts/VisueltPro/VisueltPro-Black.woff",
+      "error": "Error: HTTP 404",
+      "fallback": "official-origin rewrite"
+    },
+    {
+      "url": "https://lemarkllc.ru/assets/templates/assets/images/pages/main/8/mobg.jpg",
+      "path": "/assets/templates/assets/images/pages/main/8/mobg.jpg",
+      "bytes": 12219,
+      "sha256": "758b25386a51c4d24dbef2243c7d42432a3ab1b360ee8483997912416a02ba26"
+    },
+    {
+      "url": "https://lemarkllc.ru/assets/templates/assets/images/pages/main/8/bg.jpg",
+      "path": "/assets/templates/assets/images/pages/main/8/bg.jpg",
+      "bytes": 218955,
+      "sha256": "e63c137f9524cd7a5519b75b4d06f6e3f200ceaf00ecd3b2ae2f4b42293b8f8b"
+    }
+  ]
+}
