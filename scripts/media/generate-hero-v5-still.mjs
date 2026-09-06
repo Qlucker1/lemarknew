@@ -1,0 +1,13 @@
+import { execFile } from 'node:child_process';
+import { promisify } from 'node:util';
+import { mkdir, writeFile } from 'node:fs/promises';
+const run = promisify(execFile);
+const root = new URL('../../public/media/lemark/v5/', import.meta.url);
+await mkdir(root, {recursive:true});
+const prompt = `Photorealistic premium architectural product photograph, 16:9. This image is the opening frame of a film about COMPACT HPL. Show one full-size horizontal compact-laminate HPL panel with a warm natural oak decor on both broad faces. It is a self-supporting 10 mm thick high pressure laminate panel, not a furniture board. Camera is close to the long front cut edge at a 20-degree elevated grazing macro angle. The entire 10 mm exposed edge is a SINGLE, continuous, absolutely uniform MATTE DEEP BLACK cross-section: a clean black horizontal strip, perfectly flat and sharp. The black must be visible along the whole front edge and side edge. There is no beige core, brown core, wood fibre, chipboard, MDF, plywood, veneer substrate, solid wood, edging tape, black metal cap, aluminium rail, plastic trim, seam, or support rail. Oak grain appears ONLY as a fine decorative print on the two broad flat faces; it never continues into the black cut edge. Thickness is clearly 10 mm: a slim durable architectural panel, not paper thin and not a thick tabletop. Panel rests on two discreet black steel trestles that sit well back from its front edge. Behind it: calm sunlit contemporary gallery interior, pale mineral walls, pale stone floor, large soft-window light. Strong but elegant raking light reveals the exact rectangular geometry. Keep left third uncluttered for website headline. No people, labels, logos, text, measurements, watermark.`;
+const manifest = {version:5,stage:'start-frame',createdAt:new Date().toISOString(),model:'gpt_image_2',prompt,parameters:{aspect_ratio:'16:9',resolution:'2k',quality:'high'},materialSpec:{product:'compact HPL laminate',thicknessMm:10,faces:'warm oak decorative laminate, both faces',cutEdge:'continuous homogeneous matte black'},sourceEvidence:['https://lemarkllc.ru/poleznaya-informacziya/rekomendaczii-po-rabote-s-hpl/','https://lemarkllc.ru/en/poleznaya-informacziya/voprosyi-i-otvetyi/'],jobs:[]};
+await writeFile(new URL('start-frame-manifest.json',root),JSON.stringify(manifest,null,2));
+const cli = process.env.APPDATA + '/npm/node_modules/@higgsfield/cli/bin/higgsfield.js';
+const {stdout} = await run(process.execPath,[cli,'generate','create','gpt_image_2','--prompt',prompt,'--aspect_ratio','16:9','--resolution','2k','--quality','high','--wait','--wait-timeout','20m','--json'],{maxBuffer:10e6,timeout:1250000});
+await writeFile(new URL('start-frame-result.json',root),stdout);
+console.log(stdout);

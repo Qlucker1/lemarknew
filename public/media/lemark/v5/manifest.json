@@ -1,0 +1,154 @@
+{
+  "version": 5,
+  "createdAt": "2026-09-06T17:56:55.361Z",
+  "intent": "New HPL-only HERO film. New generated still used as start frame; no prior HERO video used as a reference.",
+  "model": "seedance_2_0",
+  "prompt": "Create one continuous, silent, 10-second photorealistic architectural product film. Use the supplied NEW start image only as the first frame and exact material reference. Do not reference, imitate or reuse any previous video.\nNON-NEGOTIABLE MATERIAL: the product is a self-supporting COMPACT HPL panel exactly 10 mm thick. It has warm oak decor only on its two broad flat faces. Every visible cut edge is one continuous, flat, homogeneous MATTE DEEP BLACK phenolic-laminate cross-section through the full 10 mm thickness. The edge is a crisp 10 mm black strip, never beige, brown, woody, layered, fibrous, chipped or speckled. Never show chipboard, particleboard, MDF, plywood, veneer substrate, solid timber, wood core, edge banding, black metal cap, aluminium profile, plastic trim or a thick tabletop. Preserve the thin black-edged geometry in every shot.\n0-3 seconds: begin exactly at the supplied frame. Slow precision lateral dolly along the slim 10 mm black front cut edge of the oak-decor compact HPL panel, in a calm sunlit mineral gallery. The camera stays close enough that the long uniformly black edge reads unmistakably. Two black steel trestles remain behind the edge; no other material is exposed.\nAt 3 seconds, a second identical 10 mm HPL panel with the same black cut edge glides across the lens from right to left for a single smooth, physically motivated foreground occlusion transition. No flash, dissolve, jump cut, warping or rapid edit.\n3-6.5 seconds: reveal three freestanding vertical oak-decor compact HPL planes in the same room. Their slim black cut edges and narrow shadow joints are visible; every panel is 10 mm, all cores black. Camera carries the same graceful sideways motion. Composition stays simple, premium and legible.\nAt 6.5 seconds, one 10 mm black-edged panel passes close across lens for a second gentle physical wipe.\n6.5-10 seconds: reveal the same refined warm public interior with large oak-decor compact HPL wall panels, each panel thin and each exposed cut edge uniformly black. Pale stone floor, warm daylight, graphite details. Camera eases to a quiet final wide view. Put the material geometry within central 40 percent for mobile crop and leave the left side calm for HTML headline. No people, no text, no logos, no labels, no measurements, no music, no sound.",
+  "parameters": {
+    "duration": 10,
+    "resolution": "1080p",
+    "aspect_ratio": "16:9",
+    "generate_audio": false
+  },
+  "references": [
+    {
+      "path": "/media/lemark/v5/start-frame.png",
+      "role": "image",
+      "purpose": "First frame and HPL edge geometry reference"
+    }
+  ],
+  "materialSpec": {
+    "panel": "compact HPL",
+    "thicknessMm": 10,
+    "exposedCutEdge": "continuous homogeneous matte black"
+  },
+  "jobs": [
+    {
+      "id": "8da551d2-e13d-48da-9a66-4042acdc3163",
+      "status": "completed",
+      "display_name": "Seedance 2.0",
+      "job_set_type": "seedance_2_0",
+      "result_url": "https://d8j0ntlcm91z4.cloudfront.net/user_2zaigKgp0Hi6Pb5NUV1EasSYVJ3/hf_20260906_175657_8da551d2-e13d-48da-9a66-4042acdc3163.mp4",
+      "created_at": 1788717417.517028,
+      "params": {
+        "width": 1920,
+        "height": 1080,
+        "prompt": "Create one continuous, silent, 10-second photorealistic architectural product film. Use the supplied NEW start image only as the first frame and exact material reference. Do not reference, imitate or reuse any previous video.\nNON-NEGOTIABLE MATERIAL: the product is a self-supporting COMPACT HPL panel exactly 10 mm thick. It has warm oak decor only on its two broad flat faces. Every visible cut edge is one continuous, flat, homogeneous MATTE DEEP BLACK phenolic-laminate cross-section through the full 10 mm thickness. The edge is a crisp 10 mm black strip, never beige, brown, woody, layered, fibrous, chipped or speckled. Never show chipboard, particleboard, MDF, plywood, veneer substrate, solid timber, wood core, edge banding, black metal cap, aluminium profile, plastic trim or a thick tabletop. Preserve the thin black-edged geometry in every shot.\n0-3 seconds: begin exactly at the supplied frame. Slow precision lateral dolly along the slim 10 mm black front cut edge of the oak-decor compact HPL panel, in a calm sunlit mineral gallery. The camera stays close enough that the long uniformly black edge reads unmistakably. Two black steel trestles remain behind the edge; no other material is exposed.\nAt 3 seconds, a second identical 10 mm HPL panel with the same black cut edge glides across the lens from right to left for a single smooth, physically motivated foreground occlusion transition. No flash, dissolve, jump cut, warping or rapid edit.\n3-6.5 seconds: reveal three freestanding vertical oak-decor compact HPL planes in the same room. Their slim black cut edges and narrow shadow joints are visible; every panel is 10 mm, all cores black. Camera carries the same graceful sideways motion. Composition stays simple, premium and legible.\nAt 6.5 seconds, one 10 mm black-edged panel passes close across lens for a second gentle physical wipe.\n6.5-10 seconds: reveal the same refined warm public interior with large oak-decor compact HPL wall panels, each panel thin and each exposed cut edge uniformly black. Pale stone floor, warm daylight, graphite details. Camera eases to a quiet final wide view. Put the material geometry within central 40 percent for mobile crop and leave the left side calm for HTML headline. No people, no text, no logos, no labels, no measurements, no music, no sound.",
+        "genre": "auto",
+        "medias": [
+          {
+            "data": {
+              "id": "7c01c98c-1d31-418c-932e-ed76d649935d",
+              "url": "https://d2ol7oe51mr4n9.cloudfront.net/user_2zaigKgp0Hi6Pb5NUV1EasSYVJ3/7c01c98c-1d31-418c-932e-ed76d649935d_resize.jpg",
+              "type": "media_input"
+            },
+            "role": "start_image"
+          }
+        ],
+        "duration": 10,
+        "resolution": "1080p",
+        "aspect_ratio": "16:9",
+        "generate_audio": false,
+        "multi_shots": false,
+        "multi_shot_mode": "custom",
+        "multi_prompt": [],
+        "speedramp": "auto",
+        "reference_elements": [],
+        "prompt_language": "en",
+        "mode": "std",
+        "model": "seedance_2_0",
+        "bitrate_mode": "standard"
+      }
+    }
+  ],
+  "outputs": [
+    {
+      "path": "/media/lemark/v5/source.mp4",
+      "bytes": 6670099,
+      "sha256": "92c844a3c7cdd83400379fe6548a7c333aa89808a9c4cb7607bd0b0ce7ceb719"
+    },
+    {
+      "path": "/media/lemark/v5/desktop.mp4",
+      "bytes": 1144468,
+      "sha256": "02febf68f0fce84347a326442075babab0bc3b0b117bf0ccd0a698b26395ae9e",
+      "ffmpegArgs": [
+        "-y",
+        "-i",
+        "public/media/lemark/v5/source.mp4",
+        "-an",
+        "-t",
+        "10",
+        "-c:v",
+        "libx264",
+        "-preset",
+        "slow",
+        "-pix_fmt",
+        "yuv420p",
+        "-g",
+        "4",
+        "-keyint_min",
+        "4",
+        "-sc_threshold",
+        "0",
+        "-bf",
+        "0",
+        "-movflags",
+        "+faststart",
+        "-vf",
+        "scale=1152:-2,fps=24",
+        "-crf",
+        "29",
+        "public/media/lemark/v5/desktop.mp4"
+      ]
+    },
+    {
+      "path": "/media/lemark/v5/mobile.mp4",
+      "bytes": 640289,
+      "sha256": "189e72f2136e0283e806dd3c53001519524c0e1331b51e5fb27a138bc89ba891",
+      "ffmpegArgs": [
+        "-y",
+        "-i",
+        "public/media/lemark/v5/source.mp4",
+        "-an",
+        "-t",
+        "10",
+        "-c:v",
+        "libx264",
+        "-preset",
+        "slow",
+        "-pix_fmt",
+        "yuv420p",
+        "-g",
+        "4",
+        "-keyint_min",
+        "4",
+        "-sc_threshold",
+        "0",
+        "-bf",
+        "0",
+        "-movflags",
+        "+faststart",
+        "-vf",
+        "scale=-2:960,crop=540:960,fps=24",
+        "-crf",
+        "30",
+        "public/media/lemark/v5/mobile.mp4"
+      ]
+    },
+    {
+      "path": "/media/lemark/v5/poster-desktop.jpg",
+      "bytes": 35664,
+      "sha256": "7d196f38f48d31f4ba0a859471d1ee9504a4097a4e2b6b2bab24525eb870dc1b"
+    },
+    {
+      "path": "/media/lemark/v5/poster-mobile.jpg",
+      "bytes": 20216,
+      "sha256": "af0559d10856b393bf6ad1f32ce1070b630e03e8c34cc7535bfcf22aa7caceff"
+    },
+    {
+      "path": "/media/lemark/v5/contact-sheet.jpg",
+      "bytes": 48445,
+      "sha256": "140526c48a5b59b2a2a1eb0d7b75a4e82d7aab253cd41d5bbec9b95c2233be7e"
+    }
+  ]
+}

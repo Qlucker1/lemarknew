@@ -50,7 +50,7 @@ function initialize(root: HTMLElement, video: HTMLVideoElement) {
       lenis = new Lenis({ smoothWheel: true, duration: .9, syncTouch: false, anchors: false, autoRaf: true,
         prevent: node => !!node.closest('.popup, .menu, .gbp-overlay') });
       root.dataset.smoothWheel = 'true';
-      const src = `/media/lemark/v3/${mobile.matches ? 'mobile' : 'desktop'}.mp4`;
+      const src = `/media/lemark/v5/${mobile.matches ? 'mobile' : 'desktop'}.mp4`;
       if (!video.src.endsWith(src)) {
         root.classList.remove('lm-story--loaded');
         video.src = src;

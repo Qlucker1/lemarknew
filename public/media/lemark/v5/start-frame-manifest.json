@@ -1,0 +1,26 @@
+{
+  "version": "v5",
+  "purpose": "New HPL-only HERO opening frame; no previous HERO video supplied as reference.",
+  "generator": "Higgsfield GPT Image 2",
+  "job": {
+    "id": "47123e04-1ebe-4530-bba4-8d7c95cbefb1",
+    "status": "completed",
+    "display_name": "GPT Image 2",
+    "job_set_type": "gpt_image_2",
+    "result_url": "https://d8j0ntlcm91z4.cloudfront.net/user_2zaigKgp0Hi6Pb5NUV1EasSYVJ3/hf_20260906_175320_47123e04-1ebe-4530-bba4-8d7c95cbefb1.png",
+    "created_at": 1788717200.433213,
+    "params": {
+      "width": 2688,
+      "height": 1520,
+      "prompt": "Photorealistic premium architectural product photograph, 16:9. This image is the opening frame of a film about COMPACT HPL. Show one full-size horizontal compact-laminate HPL panel with a warm natural oak decor on both broad faces. It is a self-supporting 10 mm thick high pressure laminate panel, not a furniture board. Camera is close to the long front cut edge at a 20-degree elevated grazing macro angle. The entire 10 mm exposed edge is a SINGLE, continuous, absolutely uniform MATTE DEEP BLACK cross-section: a clean black horizontal strip, perfectly flat and sharp. The black must be visible along the whole front edge and side edge. There is no beige core, brown core, wood fibre, chipboard, MDF, plywood, veneer substrate, solid wood, edging tape, black metal cap, aluminium rail, plastic trim, seam, or support rail. Oak grain appears ONLY as a fine decorative print on the two broad flat faces; it never continues into the black cut edge. Thickness is clearly 10 mm: a slim durable architectural panel, not paper thin and not a thick tabletop. Panel rests on two discreet black steel trestles that sit well back from its front edge. Behind it: calm sunlit contemporary gallery interior, pale mineral walls, pale stone floor, large soft-window light. Strong but elegant raking light reveals the exact rectangular geometry. Keep left third uncluttered for website headline. No people, labels, logos, text, measurements, watermark.",
+      "medias": [],
+      "aspect_ratio": "16:9",
+      "quality": "high",
+      "resolution": "2k",
+      "model": "videotape-alpha",
+      "remove_bg": false,
+      "reference_elements": []
+    }
+  },
+  "output": "/media/lemark/v5/start-frame.png"
+}
