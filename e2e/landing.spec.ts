@@ -68,18 +68,25 @@ test('wheel scrolling eases through intermediate positions and skip exits story'
   expect(await page.locator('.lm-story').evaluate(el=>el.getBoundingClientRect().bottom)).toBeLessThan(120);
 });
 
-test('desktop wheel pause snaps slowly to visible story chapters and reverses',async({page},info)=>{
+test('desktop wheel pause visits every visual stop and aligns text',async({page},info)=>{
   test.skip(info.project.name.includes('mobile'),'touch stays free-scrolling on mobile');
   await ready(page);
   await page.mouse.move(1100,500);
   await page.mouse.wheel(0,180);
-  await page.waitForTimeout(2700);
-  await expect.poll(async()=>Number(await page.locator('.lm-story').getAttribute('data-target-progress'))).toBeCloseTo(.48,1);
+  await page.waitForTimeout(3700);
+  await expect.poll(async()=>Number(await page.locator('.lm-story').getAttribute('data-target-progress'))).toBeCloseTo(.40,1);
   expect(await page.locator('[data-chapter="1"]').evaluate(el=>Number(getComputedStyle(el).opacity))).toBeGreaterThan(.98);
+  await page.mouse.wheel(0,180);
+  await page.waitForTimeout(3700);
+  await expect.poll(async()=>Number(await page.locator('.lm-story').getAttribute('data-target-progress'))).toBeCloseTo(.70,1);
+  expect(await page.locator('[data-chapter="2"]').evaluate(el=>Number(getComputedStyle(el).opacity))).toBeGreaterThan(.98);
+  await page.mouse.wheel(0,180);
+  await page.waitForTimeout(3700);
+  await expect.poll(async()=>Number(await page.locator('.lm-story').getAttribute('data-target-progress'))).toBeCloseTo(.90,1);
+  expect(await page.locator('[data-chapter="2"]').evaluate(el=>Number(getComputedStyle(el).opacity))).toBeGreaterThan(.98);
   await page.mouse.wheel(0,-180);
-  await page.waitForTimeout(2700);
-  await expect.poll(async()=>Number(await page.locator('.lm-story').getAttribute('data-target-progress'))).toBeCloseTo(0,1);
-  expect(await page.locator('[data-chapter="0"]').evaluate(el=>Number(getComputedStyle(el).opacity))).toBeGreaterThan(.98);
+  await page.waitForTimeout(3700);
+  await expect.poll(async()=>Number(await page.locator('.lm-story').getAttribute('data-target-progress'))).toBeCloseTo(.70,1);
 });
 
 test('all original sections, resources, navigation and menu are preserved',async({page},info)=>{
