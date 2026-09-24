@@ -1,0 +1,137 @@
+{
+  "version": 8,
+  "createdAt": "2026-09-24T11:24:48.061Z",
+  "purpose": "4K visual enhancement candidate for the approved v7 HERO choreography, with fixed opening and final compositions.",
+  "model": "seedance_2_0",
+  "prompt": "Create a silent, photorealistic, premium 10-second architectural material film in one continuous forward camera move. Use the supplied video strictly as the shot choreography, framing and timing reference; improve fine texture, lighting, glass, edges, micro-contrast and physical realism, never introduce a different story or extra scenes.\nUse the supplied start image as the exact opening composition and the supplied end image as the exact final composition. The first frame and last frame must match their references closely. Preserve the calm pacing and the three soft, dark physical occlusion transitions; do not use fades to black, flash frames, jump cuts, time-lapse, captions, logos, text or people.\n0-2.8 seconds: a calm contemporary kitchen, slow lateral camera movement, showing a thin architectural compact HPL worktop with a straight 10 mm exposed edge. The two broad faces carry a refined warm-grey mineral decor; the full exposed 10 mm cut edge is one homogeneous, perfectly straight matte black phenolic strip. It is never chipboard, MDF, plywood, solid timber, thick stone, metal cap or a layered edge.\n2.8-3.2 seconds: a close dark panel passes the lens as a smooth physical wipe. 3.2-5.8 seconds: a precise contemporary facade clad in the same compact HPL, subtle black panel joints, believable exterior daylight, trees and reflection detail. 5.8-6.3 seconds: another gentle dark panel wipe. 6.3-8.1 seconds: a spotless research laboratory with compact HPL work surfaces, all exposed 10 mm edges uniformly matte black. 8.1-10 seconds: a quiet modern train interior, the same compact HPL tabletop with thin black edge visible, ending calm and sharp on the supplied final composition.\nKeep every plane straight and architectural, camera movement slow and stable, no warping, no flicker, no excess depth of field, no artificial lens flare, no text. Leave the left third visually calm for live HTML typography and keep essential geometry in the central 40 percent for the mobile crop. Render high-detail commercial cinematography at true 4K quality.",
+  "parameters": {
+    "duration": 10,
+    "resolution": "4k",
+    "aspect_ratio": "16:9",
+    "bitrate_mode": "high",
+    "generate_audio": false
+  },
+  "references": [
+    {
+      "path": "/media/lemark/v7/source.mp4",
+      "role": "video",
+      "purpose": "Approved story rhythm, camera path and scene order"
+    },
+    {
+      "path": "/artifacts/hero-v8-start.jpg",
+      "role": "start_image",
+      "purpose": "Locked opening composition"
+    },
+    {
+      "path": "/artifacts/hero-v8-end.jpg",
+      "role": "end_image",
+      "purpose": "Locked train ending composition"
+    }
+  ],
+  "materialSpec": {
+    "product": "compact HPL",
+    "thicknessMm": 10,
+    "exposedCutEdge": "homogeneous matte black phenolic cross-section"
+  },
+  "job": {
+    "id": "8bd26139-9afe-4237-836b-b6afd91ec0f4",
+    "resultUrl": "https://d8j0ntlcm91z4.cloudfront.net/user_2zaigKgp0Hi6Pb5NUV1EasSYVJ3/hf_20260924_112458_8bd26139-9afe-4237-836b-b6afd91ec0f4.mp4"
+  },
+  "generatedSource": {
+    "path": "/media/lemark/v8/source.mp4",
+    "sha256": "898bea6b2443b939355ffc545aeb98779fd9c0a812fdee7f22765f3c01e26115"
+  },
+  "playback": {
+    "muted": true,
+    "keyframeIntervalFrames": 4,
+    "bFrames": 0,
+    "desktop": "/media/lemark/v8/desktop.mp4",
+    "mobile": "/media/lemark/v8/mobile.mp4"
+  },
+  "assets": [
+    {
+      "path": "/media/lemark/v8/source.mp4",
+      "bytes": 18047092,
+      "sha256": "898bea6b2443b939355ffc545aeb98779fd9c0a812fdee7f22765f3c01e26115"
+    },
+    {
+      "path": "/media/lemark/v8/desktop.mp4",
+      "bytes": 4059498,
+      "sha256": "04098956dcc96881093346ec35e4904d676f4e390534157812da0e5d93253210",
+      "ffmpegArgs": [
+        "-y",
+        "-i",
+        "public/media/lemark/v8/source.mp4",
+        "-an",
+        "-c:v",
+        "libx264",
+        "-preset",
+        "slow",
+        "-pix_fmt",
+        "yuv420p",
+        "-g",
+        "4",
+        "-keyint_min",
+        "4",
+        "-sc_threshold",
+        "0",
+        "-bf",
+        "0",
+        "-movflags",
+        "+faststart",
+        "-vf",
+        "scale=1280:-2:flags=lanczos,fps=24",
+        "-crf",
+        "23",
+        "public/media/lemark/v8/desktop.mp4"
+      ]
+    },
+    {
+      "path": "/media/lemark/v8/mobile.mp4",
+      "bytes": 1401407,
+      "sha256": "af4a19fc1a547054fc42d35fb0cbb5fc57da7c34fb4d45190a759dd449aec591",
+      "ffmpegArgs": [
+        "-y",
+        "-i",
+        "public/media/lemark/v8/source.mp4",
+        "-an",
+        "-c:v",
+        "libx264",
+        "-preset",
+        "slow",
+        "-pix_fmt",
+        "yuv420p",
+        "-g",
+        "4",
+        "-keyint_min",
+        "4",
+        "-sc_threshold",
+        "0",
+        "-bf",
+        "0",
+        "-movflags",
+        "+faststart",
+        "-vf",
+        "scale=-2:960:flags=lanczos,crop=540:960,fps=24",
+        "-crf",
+        "25",
+        "public/media/lemark/v8/mobile.mp4"
+      ]
+    },
+    {
+      "path": "/media/lemark/v8/poster-desktop.jpg",
+      "bytes": 89459,
+      "sha256": "61b171b3c0711578cabfa2eb51170f362283efce8a96d0b05bad8aac54959c2a"
+    },
+    {
+      "path": "/media/lemark/v8/poster-mobile.jpg",
+      "bytes": 35650,
+      "sha256": "3acf35435caa144bcf7c42aa871385f42c88d150b55243f25e9e88cb0a8a1c2f"
+    },
+    {
+      "path": "/media/lemark/v8/contact-sheet.jpg",
+      "bytes": 73261,
+      "sha256": "7a207787033e578bb8c160c76287b61e4ed2df2972a39d5f02960a635e7a87e9"
+    }
+  ]
+}

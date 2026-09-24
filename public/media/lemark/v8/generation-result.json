@@ -1,0 +1,55 @@
+{
+  "created_at": "2026-09-24T11:24:58.512007Z",
+  "display_name": "Seedance 2.0",
+  "id": "8bd26139-9afe-4237-836b-b6afd91ec0f4",
+  "job_type": "seedance_2_0",
+  "min_result_url": "https://cdn.higgsfield.ai/user_2zaigKgp0Hi6Pb5NUV1EasSYVJ3/hf_20260924_112458_8bd26139-9afe-4237-836b-b6afd91ec0f4_h264.mp4",
+  "params": {
+    "aspect_ratio": "16:9",
+    "bitrate_mode": "high",
+    "duration": 10,
+    "generate_audio": false,
+    "genre": "auto",
+    "height": 2160,
+    "medias": [
+      {
+        "data": {
+          "id": "03058a7f-006a-4aab-b8dc-59ba9ee0951f",
+          "type": "media_input",
+          "url": "https://d2ol7oe51mr4n9.cloudfront.net/user_2zaigKgp0Hi6Pb5NUV1EasSYVJ3/03058a7f-006a-4aab-b8dc-59ba9ee0951f.jpg"
+        },
+        "role": "start_image"
+      },
+      {
+        "data": {
+          "id": "480ce97c-93fc-4476-a80a-b792230052d6",
+          "type": "media_input",
+          "url": "https://d2ol7oe51mr4n9.cloudfront.net/user_2zaigKgp0Hi6Pb5NUV1EasSYVJ3/480ce97c-93fc-4476-a80a-b792230052d6.jpg"
+        },
+        "role": "end_image"
+      },
+      {
+        "data": {
+          "id": "ac24dfcb-69d8-4ef2-8cfd-07a540a90ded",
+          "type": "video_input",
+          "url": "https://d2ol7oe51mr4n9.cloudfront.net/user_2zaigKgp0Hi6Pb5NUV1EasSYVJ3/ac24dfcb-69d8-4ef2-8cfd-07a540a90ded.mp4"
+        },
+        "role": "video"
+      }
+    ],
+    "mode": "std",
+    "model": "seedance_2_0",
+    "multi_prompt": [],
+    "multi_shot_mode": "custom",
+    "multi_shots": false,
+    "prompt": "Create a silent, photorealistic, premium 10-second architectural material film in one continuous forward camera move. Use the supplied video strictly as the shot choreography, framing and timing reference; improve fine texture, lighting, glass, edges, micro-contrast and physical realism, never introduce a different story or extra scenes.\nUse the supplied start image as the exact opening composition and the supplied end image as the exact final composition. The first frame and last frame must match their references closely. Preserve the calm pacing and the three soft, dark physical occlusion transitions; do not use fades to black, flash frames, jump cuts, time-lapse, captions, logos, text or people.\n0-2.8 seconds: a calm contemporary kitchen, slow lateral camera movement, showing a thin architectural compact HPL worktop with a straight 10 mm exposed edge. The two broad faces carry a refined warm-grey mineral decor; the full exposed 10 mm cut edge is one homogeneous, perfectly straight matte black phenolic strip. It is never chipboard, MDF, plywood, solid timber, thick stone, metal cap or a layered edge.\n2.8-3.2 seconds: a close dark panel passes the lens as a smooth physical wipe. 3.2-5.8 seconds: a precise contemporary facade clad in the same compact HPL, subtle black panel joints, believable exterior daylight, trees and reflection detail. 5.8-6.3 seconds: another gentle dark panel wipe. 6.3-8.1 seconds: a spotless research laboratory with compact HPL work surfaces, all exposed 10 mm edges uniformly matte black. 8.1-10 seconds: a quiet modern train interior, the same compact HPL tabletop with thin black edge visible, ending calm and sharp on the supplied final composition.\nKeep every plane straight and architectural, camera movement slow and stable, no warping, no flicker, no excess depth of field, no artificial lens flare, no text. Leave the left third visually calm for live HTML typography and keep essential geometry in the central 40 percent for the mobile crop. Render high-detail commercial cinematography at true 4K quality.",
+    "prompt_language": "en",
+    "reference_elements": [],
+    "resolution": "4k",
+    "speedramp": "auto",
+    "width": 3840
+  },
+  "result_url": "https://d8j0ntlcm91z4.cloudfront.net/user_2zaigKgp0Hi6Pb5NUV1EasSYVJ3/hf_20260924_112458_8bd26139-9afe-4237-836b-b6afd91ec0f4.mp4",
+  "status": "completed",
+  "thumbnail_url": "https://cdn.higgsfield.ai/user_2zaigKgp0Hi6Pb5NUV1EasSYVJ3/hf_20260924_112458_8bd26139-9afe-4237-836b-b6afd91ec0f4_thumbnail.webp"
+}

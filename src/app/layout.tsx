@@ -15,9 +15,9 @@ export const metadata: Metadata = {
     siteName: "LEMARK",
     title: "Производитель HPL-пластика полного цикла — Lemark",
     description: "HPL для мебели, архитектуры, транспорта и чистых помещений — от производства до подбора под проект.",
-    images: [{ url: "/media/lemark/processed/posters/hero-desktop.jpg", width: 1280, height: 720, alt: "HPL полного цикла Lemark" }],
+    images: [{ url: "/media/lemark/v8/poster-desktop.jpg", width: 1280, height: 720, alt: "HPL полного цикла Lemark" }],
   },
-  twitter: { card: "summary_large_image", title: "LEMARK — HPL полного цикла", images: ["/media/lemark/processed/posters/hero-desktop.jpg"] },
+  twitter: { card: "summary_large_image", title: "LEMARK — HPL полного цикла", images: ["/media/lemark/v8/poster-desktop.jpg"] },
   icons: { icon: "/favicon.png" },
 };
 

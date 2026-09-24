@@ -27,7 +27,7 @@ test('new supplied media, stable chapters, empty pauses, forward and reverse see
   page.on('pageerror', e=>errors.push(e.message));
   await ready(page);
   const video=page.locator('.lm-story__video');
-  await expect(video).toHaveAttribute('src',info.project.name.includes('mobile')?/v7\/mobile.mp4/:/v7\/desktop.mp4/);
+  await expect(video).toHaveAttribute('src',info.project.name.includes('mobile')?/v8\/mobile.mp4/:/v8\/desktop.mp4/);
   await expect.poll(()=>video.evaluate(v=>(v as HTMLVideoElement).duration)).toBeCloseTo(10,0);
   const tops=[];
   for (const [p,index] of [[.05,0],[.48,1],[.9,2]]) {
@@ -136,7 +136,7 @@ test('reduced motion and video failure retain a short readable poster',async({pa
   expect(await page.locator('.lm-story').evaluate(el=>(el as HTMLElement).offsetHeight)).toBeLessThan(900);
   await page.screenshot({path:info.outputPath('reduced-motion.png')});
   await page.emulateMedia({reducedMotion:'no-preference'});
-  await page.route('**/media/lemark/v7/desktop.mp4',route=>route.abort());
+  await page.route('**/media/lemark/v8/desktop.mp4',route=>route.abort());
   await ready(page);
   await expect(page.locator('.lm-story')).toHaveClass(/lm-story--static/);
   await expect(page.locator('.lm-story__poster')).toBeVisible();
