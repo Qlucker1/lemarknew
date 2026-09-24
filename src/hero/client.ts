@@ -19,6 +19,9 @@ function initialize(root: HTMLElement, video: HTMLVideoElement) {
   let duration = 9.96;
   let active = true;
   let staticMode = reduced.matches || !!connection?.saveData;
+  let snapTimer: number | undefined;
+  let scrollDirection = 1;
+  const storyStops = [0, .35, .68, 1];
 
   const clamp = (n: number) => Math.min(1, Math.max(0, n));
   const fade = (n: number, a: number, b: number) => {
@@ -85,6 +88,20 @@ function initialize(root: HTMLElement, video: HTMLVideoElement) {
     }
     raf = requestAnimationFrame(tick);
   }
+  function snapToStoryStop() {
+    snapTimer = undefined;
+    if (!lenis || staticMode || mobile.matches || !active || target <= .015 || target >= .985) return;
+    const candidates = scrollDirection > 0 ? storyStops : [...storyStops].reverse();
+    const stop = candidates.find(point => scrollDirection > 0 ? point > target + .01 : point < target - .01);
+    if (stop === undefined) return;
+    lenis.scrollTo(start + range * stop, { duration: .72 });
+  }
+  function scheduleStorySnap(event: WheelEvent) {
+    if (event.deltaY === 0 || staticMode || mobile.matches || !active) return;
+    scrollDirection = Math.sign(event.deltaY);
+    if (snapTimer !== undefined) window.clearTimeout(snapTimer);
+    snapTimer = window.setTimeout(snapToStoryStop, 180);
+  }
   const observer = new IntersectionObserver(([entry]) => { active = entry.isIntersecting; }, {rootMargin: '200px'});
   observer.observe(root);
   root.querySelector('.lm-story__skip')?.addEventListener('click', () => {
@@ -93,11 +110,12 @@ function initialize(root: HTMLElement, video: HTMLVideoElement) {
     else window.scrollTo({top:y, behavior:'instant'});
   });
   window.addEventListener('resize', measure, {passive:true});
+  window.addEventListener('wheel', scheduleStorySnap, {passive:true});
   window.addEventListener('load', measure, {once:true});
   reduced.addEventListener('change', setup);
   mobile.addEventListener('change', setup);
   document.fonts.ready.then(measure);
-  window.addEventListener('pagehide', () => { cancelAnimationFrame(raf); lenis?.destroy(); observer.disconnect(); });
+  window.addEventListener('pagehide', () => { if (snapTimer !== undefined) window.clearTimeout(snapTimer); cancelAnimationFrame(raf); lenis?.destroy(); observer.disconnect(); });
   window.addEventListener('pageshow', event => {
     if (event.persisted) { setup(); observer.observe(root); tick(); }
   });
