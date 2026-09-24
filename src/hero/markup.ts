@@ -1,9 +1,9 @@
 export const heroHtml = `
-<section class="lm-story" aria-label="HPL Lemark: от материала к пространству" data-version="6">
+<section class="lm-story" aria-label="HPL Lemark: от материала к пространству" data-version="7">
   <div class="lm-story__stage">
     <picture class="lm-story__poster">
-      <source media="(max-width: 767px)" srcset="/media/lemark/v6/poster-mobile.jpg">
-      <img src="/media/lemark/v6/poster-desktop.jpg" alt="HPL Lemark в интерьере, архитектуре, лаборатории и транспорте" fetchpriority="high">
+      <source media="(max-width: 767px)" srcset="/media/lemark/v7/poster-mobile.jpg">
+      <img src="/media/lemark/v7/poster-desktop.jpg" alt="HPL Lemark в интерьере, архитектуре, лаборатории и транспорте" fetchpriority="high">
     </picture>
     <video class="lm-story__video" muted playsinline preload="none" aria-hidden="true" tabindex="-1"></video>
     <div class="lm-story__shade"></div>

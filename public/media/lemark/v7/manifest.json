@@ -1,0 +1,123 @@
+{
+  "version": 7,
+  "purpose": "High-quality user-supplied HPL HERO film ending on the train, processed for reversible scroll-scrubbing.",
+  "input": {
+    "path": "/media/lemark/v6/source.mp4",
+    "sha256": "99a3c92f06cdcf93705f1da7d50b1ddcc30815b4276669ebe1477d40fcaa02bd"
+  },
+  "finalFrameFix": {
+    "liveVideoEndsAtSeconds": 8.625,
+    "heldFrame": "last clean train frame",
+    "holdDurationSeconds": 1.375,
+    "removes": "generated black fade at source end"
+  },
+  "probe": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_name": "h264",
+        "width": 1280,
+        "height": 720,
+        "r_frame_rate": "24/1"
+      }
+    ],
+    "format": {
+      "duration": "10.000000",
+      "size": "3989622"
+    }
+  },
+  "playback": {
+    "muted": true,
+    "keyframeIntervalFrames": 4,
+    "bFrames": 0,
+    "desktop": "/media/lemark/v7/desktop.mp4",
+    "mobile": "/media/lemark/v7/mobile.mp4"
+  },
+  "assets": [
+    {
+      "path": "/media/lemark/v7/source.mp4",
+      "bytes": 3989622,
+      "sha256": "cc1cc6a4dbeaefb101653cf99ef399b3fb7180898441c1a888f8e3cf4ddaf17d"
+    },
+    {
+      "path": "/media/lemark/v7/desktop.mp4",
+      "bytes": 2878750,
+      "sha256": "0c0631f5c4b2e7235afaa20f8d9c3cef836956c6fba2f65d6141e3f0b64819f3",
+      "ffmpegArgs": [
+        "-y",
+        "-i",
+        "public/media/lemark/v7/source.mp4",
+        "-an",
+        "-c:v",
+        "libx264",
+        "-preset",
+        "slow",
+        "-pix_fmt",
+        "yuv420p",
+        "-g",
+        "4",
+        "-keyint_min",
+        "4",
+        "-sc_threshold",
+        "0",
+        "-bf",
+        "0",
+        "-movflags",
+        "+faststart",
+        "-vf",
+        "scale=1280:-2,fps=24",
+        "-crf",
+        "25",
+        "public/media/lemark/v7/desktop.mp4"
+      ]
+    },
+    {
+      "path": "/media/lemark/v7/mobile.mp4",
+      "bytes": 964626,
+      "sha256": "51584645dd82e541c0dc48f255498c7577361b0fa170bee1f388320b70567888",
+      "ffmpegArgs": [
+        "-y",
+        "-i",
+        "public/media/lemark/v7/source.mp4",
+        "-an",
+        "-c:v",
+        "libx264",
+        "-preset",
+        "slow",
+        "-pix_fmt",
+        "yuv420p",
+        "-g",
+        "4",
+        "-keyint_min",
+        "4",
+        "-sc_threshold",
+        "0",
+        "-bf",
+        "0",
+        "-movflags",
+        "+faststart",
+        "-vf",
+        "scale=-2:960,crop=540:960,fps=24",
+        "-crf",
+        "27",
+        "public/media/lemark/v7/mobile.mp4"
+      ]
+    },
+    {
+      "path": "/media/lemark/v7/poster-desktop.jpg",
+      "bytes": 72473,
+      "sha256": "cf37149e9779aa77b7fe5c8716efa13a82b4fcff13db36366c54fe7a604a22fc"
+    },
+    {
+      "path": "/media/lemark/v7/poster-mobile.jpg",
+      "bytes": 28418,
+      "sha256": "8c9d467dc6dba40ac8614c80eacd0805d230b508585e7e3f07c705747f9c1088"
+    },
+    {
+      "path": "/media/lemark/v7/contact-sheet.jpg",
+      "bytes": 67209,
+      "sha256": "7f047bfcf056aaddcfa74c7bcb07b8f58cf171fb50e4cede4201089eaa1bc738"
+    }
+  ]
+}
