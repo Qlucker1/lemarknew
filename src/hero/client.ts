@@ -21,7 +21,8 @@ function initialize(root: HTMLElement, video: HTMLVideoElement) {
   let staticMode = reduced.matches || !!connection?.saveData;
   let snapTimer: number | undefined;
   let scrollDirection = 1;
-  const storyStops = [0, .35, .68, 1];
+  // These are the settled visual chapters, not the blackout transition frames.
+  const storyStops = [0, .48, .90];
 
   const clamp = (n: number) => Math.min(1, Math.max(0, n));
   const fade = (n: number, a: number, b: number) => {
@@ -94,13 +95,15 @@ function initialize(root: HTMLElement, video: HTMLVideoElement) {
     const candidates = scrollDirection > 0 ? storyStops : [...storyStops].reverse();
     const stop = candidates.find(point => scrollDirection > 0 ? point > target + .01 : point < target - .01);
     if (stop === undefined) return;
-    lenis.scrollTo(start + range * stop, { duration: .72 });
+    const distance = Math.abs(stop - target);
+    const snapDuration = Math.min(2.2, Math.max(1.1, .8 + distance * 3.5));
+    lenis.scrollTo(start + range * stop, { duration: snapDuration });
   }
   function scheduleStorySnap(event: WheelEvent) {
     if (event.deltaY === 0 || staticMode || mobile.matches || !active) return;
     scrollDirection = Math.sign(event.deltaY);
     if (snapTimer !== undefined) window.clearTimeout(snapTimer);
-    snapTimer = window.setTimeout(snapToStoryStop, 180);
+    snapTimer = window.setTimeout(snapToStoryStop, 260);
   }
   const observer = new IntersectionObserver(([entry]) => { active = entry.isIntersecting; }, {rootMargin: '200px'});
   observer.observe(root);
