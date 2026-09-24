@@ -1,0 +1,118 @@
+{
+  "version": 6,
+  "purpose": "User-supplied HPL HERO film, processed for scroll-scrubbing.",
+  "source": {
+    "type": "user-provided",
+    "originalFile": "C:/Users/bigas/Downloads/hf_20260922_094057_32d36e9d-a008-4f2d-846e-ef9936752587.mp4",
+    "probe": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "width": 1280,
+          "height": 720,
+          "r_frame_rate": "24/1"
+        }
+      ],
+      "format": {
+        "duration": "9.041667",
+        "size": "9428945"
+      }
+    }
+  },
+  "durationSeconds": 9.041667,
+  "playback": {
+    "muted": true,
+    "keyframeIntervalFrames": 4,
+    "bFrames": 0,
+    "desktop": "/media/lemark/v6/desktop.mp4",
+    "mobile": "/media/lemark/v6/mobile.mp4"
+  },
+  "assets": [
+    {
+      "path": "/media/lemark/v6/source.mp4",
+      "bytes": 9428945,
+      "sha256": "99a3c92f06cdcf93705f1da7d50b1ddcc30815b4276669ebe1477d40fcaa02bd"
+    },
+    {
+      "path": "/media/lemark/v6/desktop.mp4",
+      "bytes": 1467601,
+      "sha256": "7e48038eb1d067c1d57d622006552ba51b60250a025aeb82da06c96e20eace4c",
+      "ffmpegArgs": [
+        "-y",
+        "-i",
+        "public/media/lemark/v6/source.mp4",
+        "-an",
+        "-c:v",
+        "libx264",
+        "-preset",
+        "slow",
+        "-pix_fmt",
+        "yuv420p",
+        "-g",
+        "4",
+        "-keyint_min",
+        "4",
+        "-sc_threshold",
+        "0",
+        "-bf",
+        "0",
+        "-movflags",
+        "+faststart",
+        "-vf",
+        "scale=1152:-2,fps=24",
+        "-crf",
+        "29",
+        "public/media/lemark/v6/desktop.mp4"
+      ]
+    },
+    {
+      "path": "/media/lemark/v6/mobile.mp4",
+      "bytes": 636193,
+      "sha256": "44ff1bab5dff8b87f564d78f728fa5697b56f20b1f61c58159ce35f08b9e02e6",
+      "ffmpegArgs": [
+        "-y",
+        "-i",
+        "public/media/lemark/v6/source.mp4",
+        "-an",
+        "-c:v",
+        "libx264",
+        "-preset",
+        "slow",
+        "-pix_fmt",
+        "yuv420p",
+        "-g",
+        "4",
+        "-keyint_min",
+        "4",
+        "-sc_threshold",
+        "0",
+        "-bf",
+        "0",
+        "-movflags",
+        "+faststart",
+        "-vf",
+        "scale=-2:960,crop=540:960,fps=24",
+        "-crf",
+        "30",
+        "public/media/lemark/v6/mobile.mp4"
+      ]
+    },
+    {
+      "path": "/media/lemark/v6/poster-desktop.jpg",
+      "bytes": 58361,
+      "sha256": "327c43de385249f9751468e935ca7090fbb322efcd0423608f3b4ac9de95194d"
+    },
+    {
+      "path": "/media/lemark/v6/poster-mobile.jpg",
+      "bytes": 27359,
+      "sha256": "14daa5df48d3c18c96ab19f29ccee557fe8355ad4e33bc392b45848f0b74b435"
+    },
+    {
+      "path": "/media/lemark/v6/contact-sheet.jpg",
+      "bytes": 59904,
+      "sha256": "ddd99848b867145ecce20821a980aff1e4c6b1b5617a0672e64a5063992f99f7"
+    }
+  ]
+}

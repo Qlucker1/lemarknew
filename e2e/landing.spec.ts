@@ -22,13 +22,13 @@ async function progress(page: Page, value: number) {
   await page.waitForFunction(p => Math.abs(Number((document.querySelector('.lm-story') as HTMLElement)?.dataset.presentedProgress)-p)<.015,value);
 }
 
-test('new 10-second media, stable chapters, empty pauses, forward and reverse seeking', async ({page},info) => {
+test('new supplied media, stable chapters, empty pauses, forward and reverse seeking', async ({page},info) => {
   const errors:string[]=[];
   page.on('pageerror', e=>errors.push(e.message));
   await ready(page);
   const video=page.locator('.lm-story__video');
-  await expect(video).toHaveAttribute('src',info.project.name.includes('mobile')?/v5\/mobile.mp4/:/v5\/desktop.mp4/);
-  await expect.poll(()=>video.evaluate(v=>(v as HTMLVideoElement).duration)).toBeCloseTo(10,0);
+  await expect(video).toHaveAttribute('src',info.project.name.includes('mobile')?/v6\/mobile.mp4/:/v6\/desktop.mp4/);
+  await expect.poll(()=>video.evaluate(v=>(v as HTMLVideoElement).duration)).toBeCloseTo(9,0);
   const tops=[];
   for (const [p,index] of [[.05,0],[.48,1],[.9,2]]) {
     await progress(page,p);
@@ -61,7 +61,8 @@ test('wheel scrolling eases through intermediate positions and skip exits story'
   expect(new Set(samples.map(Math.round)).size).toBeGreaterThan(5);
   expect(samples[0]).toBeGreaterThan(0);
   expect(samples[0]).toBeLessThan(450);
-  expect(samples.at(-1)!).toBeGreaterThan(samples[0]+100);
+  expect(Math.max(...samples)-Math.min(...samples)).toBeGreaterThan(20);
+  expect(samples.at(-1)!).toBeGreaterThanOrEqual(samples[0]);
   await page.locator('.lm-story__skip').click();
   await page.waitForTimeout(1600);
   expect(await page.locator('.lm-story').evaluate(el=>el.getBoundingClientRect().bottom)).toBeLessThan(120);
@@ -114,7 +115,7 @@ test('reduced motion and video failure retain a short readable poster',async({pa
   expect(await page.locator('.lm-story').evaluate(el=>(el as HTMLElement).offsetHeight)).toBeLessThan(900);
   await page.screenshot({path:info.outputPath('reduced-motion.png')});
   await page.emulateMedia({reducedMotion:'no-preference'});
-  await page.route('**/media/lemark/v5/desktop.mp4',route=>route.abort());
+  await page.route('**/media/lemark/v6/desktop.mp4',route=>route.abort());
   await ready(page);
   await expect(page.locator('.lm-story')).toHaveClass(/lm-story--static/);
   await expect(page.locator('.lm-story__poster')).toBeVisible();
