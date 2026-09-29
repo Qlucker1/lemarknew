@@ -115,8 +115,8 @@ function initialize(root: HTMLElement, video: HTMLVideoElement) {
   }
   function mobileControlZone() {
     const position = window.scrollY;
-    // The final stop deliberately remains escapable: the next gesture continues into the page.
-    return position >= start - 2 && position < start + range * .985;
+    // Keep ownership at the exact final handoff so a reverse gesture cannot jump into the story.
+    return position >= start - 2 && position <= start + range + 2;
   }
   function mobileStop(direction: number, progress: number) {
     const stops = direction > 0 ? [...storyStops.slice(1), 1] : [...storyStops].reverse();
@@ -171,13 +171,18 @@ function initialize(root: HTMLElement, video: HTMLVideoElement) {
   }
   function holdMobileGesture(event: TouchEvent) {
     if (!mobileGestureOwnsScroll) return;
-    event.preventDefault();
     const currentY = event.touches[0]?.clientY ?? mobileTouchStartY;
     const travel = mobileTouchStartY - currentY;
     if (mobileGestureDirection === 0 && Math.abs(travel) > 4) {
       mobileGestureDirection = Math.sign(travel);
+      // At the final frame, a forward gesture is the intentional exit to the next section.
+      if (mobileGestureStartProgress >= .985 && mobileGestureDirection > 0) {
+        mobileGestureOwnsScroll = false;
+        return;
+      }
       mobileGestureStop = mobileStop(mobileGestureDirection, mobileGestureStartProgress);
     }
+    event.preventDefault();
     if (!mobileGestureStop || mobileGestureDirection === 0) return;
     const controlledTravel = Math.max(-1, Math.min(1, travel / Math.max(1, window.innerHeight) * .32));
     const progress = mobileGestureStartProgress + controlledTravel;

@@ -89,7 +89,7 @@ test('desktop wheel pause visits every visual stop and aligns text',async({page}
   await expect.poll(async()=>Number(await page.locator('.lm-story').getAttribute('data-target-progress'))).toBeCloseTo(.70,1);
 });
 
-test('mobile long scroll advances one HERO stop at a time', async ({page},info) => {
+test('mobile long scroll advances one HERO stop at a time and reverses from the exit edge', async ({page},info) => {
   test.skip(!info.project.name.includes('mobile'),'mobile-only scroll guard');
   await ready(page);
   await page.evaluate(() => {
@@ -112,6 +112,22 @@ test('mobile long scroll advances one HERO stop at a time', async ({page},info) 
   await page.mouse.wheel(0,5000);
   await page.waitForTimeout(1750);
   await expect.poll(async()=>Number(await page.locator('.lm-story').getAttribute('data-target-progress'))).toBeCloseTo(.70,1);
+  await page.mouse.wheel(0,5000);
+  await page.waitForTimeout(1750);
+  await expect.poll(async()=>Number(await page.locator('.lm-story').getAttribute('data-target-progress'))).toBeCloseTo(.90,1);
+  await page.mouse.wheel(0,5000);
+  await page.waitForTimeout(1750);
+  await expect.poll(async()=>Number(await page.locator('.lm-story').getAttribute('data-target-progress'))).toBeCloseTo(1,2);
+  await page.evaluate(() => {
+    const target = document.querySelector('.lm-story')!;
+    const touch = (y:number) => new Touch({identifier:2,target,clientX:200,clientY:y});
+    target.dispatchEvent(new TouchEvent('touchstart',{bubbles:true,cancelable:true,touches:[touch(120)],changedTouches:[touch(120)]}));
+    target.dispatchEvent(new TouchEvent('touchmove',{bubbles:true,cancelable:true,touches:[touch(700)],changedTouches:[touch(700)]}));
+    target.dispatchEvent(new TouchEvent('touchend',{bubbles:true,cancelable:true,touches:[],changedTouches:[touch(700)]}));
+  });
+  await page.waitForTimeout(1750);
+  await expect.poll(async()=>Number(await page.locator('.lm-story').getAttribute('data-target-progress'))).toBeCloseTo(.90,1);
+  await page.screenshot({path:info.outputPath('reverse-final-stop.png')});
 });
 
 test('all original sections, resources, navigation and menu are preserved',async({page},info)=>{
