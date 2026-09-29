@@ -20,6 +20,10 @@ function initialize(root: HTMLElement, video: HTMLVideoElement) {
   let active = true;
   let staticMode = reduced.matches || !!connection?.saveData;
   let snapTimer: number | undefined;
+  let mobileReleaseTimer: number | undefined;
+  let mobileTouchStartY = 0;
+  let mobileGestureOwnsScroll = false;
+  let mobileStepping = false;
   let scrollDirection = 1;
   // Four settled visual scenes: kitchen, facade, laboratory, train.
   const storyStops = [0, .40, .70, .90];
@@ -51,9 +55,13 @@ function initialize(root: HTMLElement, video: HTMLVideoElement) {
       video.load();
       render(0);
     } else {
-      lenis = new Lenis({ smoothWheel: true, duration: .9, wheelMultiplier: .75, syncTouch: false, anchors: false, autoRaf: true,
-        prevent: node => !!node.closest('.popup, .menu, .gbp-overlay') });
-      root.dataset.smoothWheel = 'true';
+      if (!mobile.matches) {
+        lenis = new Lenis({ smoothWheel: true, duration: .9, wheelMultiplier: .75, syncTouch: false, anchors: false, autoRaf: true,
+          prevent: node => !!node.closest('.popup, .menu, .gbp-overlay') });
+        root.dataset.smoothWheel = 'true';
+      } else {
+        delete root.dataset.smoothWheel;
+      }
       const src = `/media/lemark/v8/${mobile.matches ? 'mobile' : 'desktop'}.mp4`;
       if (!video.src.endsWith(src)) {
         root.classList.remove('lm-story--loaded');
@@ -99,11 +107,47 @@ function initialize(root: HTMLElement, video: HTMLVideoElement) {
     const snapDuration = Math.min(3.4, Math.max(1.8, 1.2 + distance * 5));
     lenis.scrollTo(start + range * stop, { duration: snapDuration });
   }
+  function mobileControlZone() {
+    const position = window.scrollY;
+    // The final stop deliberately remains escapable: the next gesture continues into the page.
+    return position >= start - 2 && position < start + range * .985;
+  }
+  function moveMobileStory(direction: number) {
+    if (!mobile.matches || staticMode || !active || mobileStepping || !mobileControlZone()) return false;
+    const current = clamp((window.scrollY - start) / Math.max(1, range));
+    const stops = direction > 0 ? [...storyStops.slice(1), 1] : [...storyStops].reverse();
+    const next = stops.find(point => direction > 0 ? point > current + .015 : point < current - .015);
+    if (next === undefined) return false;
+    mobileStepping = true;
+    window.scrollTo({ top: start + range * next, behavior: 'smooth' });
+    if (mobileReleaseTimer !== undefined) window.clearTimeout(mobileReleaseTimer);
+    mobileReleaseTimer = window.setTimeout(() => { mobileStepping = false; }, 850);
+    return true;
+  }
   function scheduleStorySnap(event: WheelEvent) {
-    if (event.deltaY === 0 || staticMode || mobile.matches || !active) return;
+    if (event.deltaY === 0 || staticMode || !active) return;
+    if (mobile.matches) {
+      if (moveMobileStory(Math.sign(event.deltaY))) event.preventDefault();
+      return;
+    }
     scrollDirection = Math.sign(event.deltaY);
     if (snapTimer !== undefined) window.clearTimeout(snapTimer);
     snapTimer = window.setTimeout(snapToStoryStop, 320);
+  }
+  function beginMobileGesture(event: TouchEvent) {
+    const targetElement = event.target instanceof Element ? event.target : null;
+    mobileGestureOwnsScroll = mobile.matches && mobileControlZone() && !targetElement?.closest('a,button,input,textarea,select,label');
+    mobileTouchStartY = event.touches[0]?.clientY ?? 0;
+  }
+  function holdMobileGesture(event: TouchEvent) {
+    if (mobileGestureOwnsScroll) event.preventDefault();
+  }
+  function endMobileGesture(event: TouchEvent) {
+    if (!mobileGestureOwnsScroll) return;
+    mobileGestureOwnsScroll = false;
+    const endY = event.changedTouches[0]?.clientY ?? mobileTouchStartY;
+    const distance = mobileTouchStartY - endY;
+    if (Math.abs(distance) > 28) moveMobileStory(Math.sign(distance));
   }
   const observer = new IntersectionObserver(([entry]) => { active = entry.isIntersecting; }, {rootMargin: '200px'});
   observer.observe(root);
@@ -113,12 +157,15 @@ function initialize(root: HTMLElement, video: HTMLVideoElement) {
     else window.scrollTo({top:y, behavior:'instant'});
   });
   window.addEventListener('resize', measure, {passive:true});
-  window.addEventListener('wheel', scheduleStorySnap, {passive:true});
+  window.addEventListener('wheel', scheduleStorySnap, {passive:false});
+  window.addEventListener('touchstart', beginMobileGesture, {passive:true});
+  window.addEventListener('touchmove', holdMobileGesture, {passive:false});
+  window.addEventListener('touchend', endMobileGesture, {passive:true});
   window.addEventListener('load', measure, {once:true});
   reduced.addEventListener('change', setup);
   mobile.addEventListener('change', setup);
   document.fonts.ready.then(measure);
-  window.addEventListener('pagehide', () => { if (snapTimer !== undefined) window.clearTimeout(snapTimer); cancelAnimationFrame(raf); lenis?.destroy(); observer.disconnect(); });
+  window.addEventListener('pagehide', () => { if (snapTimer !== undefined) window.clearTimeout(snapTimer); if (mobileReleaseTimer !== undefined) window.clearTimeout(mobileReleaseTimer); cancelAnimationFrame(raf); lenis?.destroy(); observer.disconnect(); });
   window.addEventListener('pageshow', event => {
     if (event.persisted) { setup(); observer.observe(root); tick(); }
   });
