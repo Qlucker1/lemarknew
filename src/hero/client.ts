@@ -20,8 +20,11 @@ function initialize(root: HTMLElement, video: HTMLVideoElement) {
   let active = true;
   let staticMode = reduced.matches || !!connection?.saveData;
   let snapTimer: number | undefined;
-  let mobileReleaseTimer: number | undefined;
+  let mobileAnimationRaf = 0;
   let mobileTouchStartY = 0;
+  let mobileGestureStartProgress = 0;
+  let mobileGestureDirection = 0;
+  let mobileGestureStop: number | undefined;
   let mobileGestureOwnsScroll = false;
   let mobileStepping = false;
   let scrollDirection = 1;
@@ -93,7 +96,10 @@ function initialize(root: HTMLElement, video: HTMLVideoElement) {
       bar.style.transform = `scaleX(${target})`;
       const time = target * duration;
       // Keep one seek in flight, so slow decoders do not accumulate stale requests.
-      if (video.readyState >= 2 && !video.seeking && Math.abs(video.currentTime - time) > 1 / 48) video.currentTime = time;
+      // A 24 fps source does not benefit from seeking between real frames. On touch devices
+      // this avoids redundant decoder work that reads as tiny visual stalls.
+      const seekThreshold = mobile.matches ? 1 / 24 : 1 / 48;
+      if (video.readyState >= 2 && !video.seeking && Math.abs(video.currentTime - time) > seekThreshold) video.currentTime = time;
     }
     raf = requestAnimationFrame(tick);
   }
@@ -112,21 +118,42 @@ function initialize(root: HTMLElement, video: HTMLVideoElement) {
     // The final stop deliberately remains escapable: the next gesture continues into the page.
     return position >= start - 2 && position < start + range * .985;
   }
+  function mobileStop(direction: number, progress: number) {
+    const stops = direction > 0 ? [...storyStops.slice(1), 1] : [...storyStops].reverse();
+    return stops.find(point => direction > 0 ? point > progress + .015 : point < progress - .015);
+  }
+  function setMobileProgress(progress: number) {
+    window.scrollTo({ top: start + range * clamp(progress), behavior: 'instant' });
+  }
+  function easeInOut(t: number) {
+    return t < .5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2;
+  }
+  function settleMobileStory(destination: number) {
+    const source = clamp((window.scrollY - start) / Math.max(1, range));
+    const distance = Math.abs(destination - source);
+    const settleDuration = Math.min(1650, Math.max(850, 650 + distance * 3000));
+    const startedAt = performance.now();
+    mobileStepping = true;
+    const animate = (now: number) => {
+      const elapsed = clamp((now - startedAt) / settleDuration);
+      setMobileProgress(source + (destination - source) * easeInOut(elapsed));
+      if (elapsed < 1) mobileAnimationRaf = requestAnimationFrame(animate);
+      else { mobileAnimationRaf = 0; mobileStepping = false; }
+    };
+    mobileAnimationRaf = requestAnimationFrame(animate);
+  }
   function moveMobileStory(direction: number) {
     if (!mobile.matches || staticMode || !active || mobileStepping || !mobileControlZone()) return false;
     const current = clamp((window.scrollY - start) / Math.max(1, range));
-    const stops = direction > 0 ? [...storyStops.slice(1), 1] : [...storyStops].reverse();
-    const next = stops.find(point => direction > 0 ? point > current + .015 : point < current - .015);
+    const next = mobileStop(direction, current);
     if (next === undefined) return false;
-    mobileStepping = true;
-    window.scrollTo({ top: start + range * next, behavior: 'smooth' });
-    if (mobileReleaseTimer !== undefined) window.clearTimeout(mobileReleaseTimer);
-    mobileReleaseTimer = window.setTimeout(() => { mobileStepping = false; }, 850);
+    settleMobileStory(next);
     return true;
   }
   function scheduleStorySnap(event: WheelEvent) {
     if (event.deltaY === 0 || staticMode || !active) return;
     if (mobile.matches) {
+      if (mobileStepping && mobileControlZone()) { event.preventDefault(); return; }
       if (moveMobileStory(Math.sign(event.deltaY))) event.preventDefault();
       return;
     }
@@ -138,16 +165,34 @@ function initialize(root: HTMLElement, video: HTMLVideoElement) {
     const targetElement = event.target instanceof Element ? event.target : null;
     mobileGestureOwnsScroll = mobile.matches && mobileControlZone() && !targetElement?.closest('a,button,input,textarea,select,label');
     mobileTouchStartY = event.touches[0]?.clientY ?? 0;
+    mobileGestureStartProgress = clamp((window.scrollY - start) / Math.max(1, range));
+    mobileGestureDirection = 0;
+    mobileGestureStop = undefined;
   }
   function holdMobileGesture(event: TouchEvent) {
-    if (mobileGestureOwnsScroll) event.preventDefault();
+    if (!mobileGestureOwnsScroll) return;
+    event.preventDefault();
+    const currentY = event.touches[0]?.clientY ?? mobileTouchStartY;
+    const travel = mobileTouchStartY - currentY;
+    if (mobileGestureDirection === 0 && Math.abs(travel) > 4) {
+      mobileGestureDirection = Math.sign(travel);
+      mobileGestureStop = mobileStop(mobileGestureDirection, mobileGestureStartProgress);
+    }
+    if (!mobileGestureStop || mobileGestureDirection === 0) return;
+    const controlledTravel = Math.max(-1, Math.min(1, travel / Math.max(1, window.innerHeight) * .32));
+    const progress = mobileGestureStartProgress + controlledTravel;
+    const lower = Math.min(mobileGestureStartProgress, mobileGestureStop);
+    const upper = Math.max(mobileGestureStartProgress, mobileGestureStop);
+    setMobileProgress(Math.max(lower, Math.min(upper, progress)));
   }
   function endMobileGesture(event: TouchEvent) {
     if (!mobileGestureOwnsScroll) return;
     mobileGestureOwnsScroll = false;
+    if (mobileStepping) return;
     const endY = event.changedTouches[0]?.clientY ?? mobileTouchStartY;
     const distance = mobileTouchStartY - endY;
-    if (Math.abs(distance) > 28) moveMobileStory(Math.sign(distance));
+    if (mobileGestureStop && Math.abs(distance) > 28) settleMobileStory(mobileGestureStop);
+    else settleMobileStory(mobileGestureStartProgress);
   }
   const observer = new IntersectionObserver(([entry]) => { active = entry.isIntersecting; }, {rootMargin: '200px'});
   observer.observe(root);
@@ -165,7 +210,7 @@ function initialize(root: HTMLElement, video: HTMLVideoElement) {
   reduced.addEventListener('change', setup);
   mobile.addEventListener('change', setup);
   document.fonts.ready.then(measure);
-  window.addEventListener('pagehide', () => { if (snapTimer !== undefined) window.clearTimeout(snapTimer); if (mobileReleaseTimer !== undefined) window.clearTimeout(mobileReleaseTimer); cancelAnimationFrame(raf); lenis?.destroy(); observer.disconnect(); });
+  window.addEventListener('pagehide', () => { if (snapTimer !== undefined) window.clearTimeout(snapTimer); cancelAnimationFrame(mobileAnimationRaf); cancelAnimationFrame(raf); lenis?.destroy(); observer.disconnect(); });
   window.addEventListener('pageshow', event => {
     if (event.persisted) { setup(); observer.observe(root); tick(); }
   });

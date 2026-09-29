@@ -97,14 +97,20 @@ test('mobile long scroll advances one HERO stop at a time', async ({page},info) 
     const touch = (y:number) => new Touch({identifier:1,target,clientX:200,clientY:y});
     target.dispatchEvent(new TouchEvent('touchstart',{bubbles:true,cancelable:true,touches:[touch(700)],changedTouches:[touch(700)]}));
     target.dispatchEvent(new TouchEvent('touchmove',{bubbles:true,cancelable:true,touches:[touch(120)],changedTouches:[touch(120)]}));
-    target.dispatchEvent(new TouchEvent('touchend',{bubbles:true,cancelable:true,touches:[],changedTouches:[touch(120)]}));
   });
-  await page.waitForTimeout(1100);
+  await expect.poll(async()=>Number(await page.locator('.lm-story').getAttribute('data-target-progress'))).toBeGreaterThan(.1);
+  await expect.poll(async()=>Number(await page.locator('.lm-story').getAttribute('data-target-progress'))).toBeLessThan(.4);
+  await page.evaluate(() => {
+    const target = document.querySelector('.lm-story')!;
+    const touch = new Touch({identifier:1,target,clientX:200,clientY:120});
+    target.dispatchEvent(new TouchEvent('touchend',{bubbles:true,cancelable:true,touches:[],changedTouches:[touch]}));
+  });
+  await page.waitForTimeout(1750);
   await expect.poll(async()=>Number(await page.locator('.lm-story').getAttribute('data-target-progress'))).toBeCloseTo(.40,1);
   expect(await page.locator('[data-chapter="1"]').evaluate(el=>Number(getComputedStyle(el).opacity))).toBeGreaterThan(.98);
   await page.mouse.move(200,500);
   await page.mouse.wheel(0,5000);
-  await page.waitForTimeout(1100);
+  await page.waitForTimeout(1750);
   await expect.poll(async()=>Number(await page.locator('.lm-story').getAttribute('data-target-progress'))).toBeCloseTo(.70,1);
 });
 
